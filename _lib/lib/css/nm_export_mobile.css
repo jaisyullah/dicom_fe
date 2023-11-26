@@ -1,0 +1,78 @@
+.exportConfig {
+    top: 0;
+    width: calc(100vw - 40px) !important;
+}
+
+.buttons, .buttons table, .buttons tbody, .buttons tr, .buttons td {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.buttons a, .buttons button {
+    height: 35px;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.scExportPage {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.scExportTable {
+    width: 100vw !important;
+    height: auto !important;
+}
+
+.scExportLine, .scExportLine table, .scExportLine tbody, .scExportLine, .scExportLine td:not(.scExportBarDone, .scExportBarRest) {
+    display: flex;
+    flex-direction: column;
+    max-width: 100vw;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.scExportLine > table {
+    padding: 20px !important;
+}
+
+.scButton_default {
+    margin: 10px;
+    height: 25px;
+    line-height: 25px;
+    flex-direction: column;
+    text-align: center;
+}
+
+td#idMessage {
+    padding: 30px !important;
+    display: block;
+}
+
+table.scExportBar {
+    display: flex;
+    width: auto !important;
+}
+
+.scExportBar tbody {
+    display: flex;
+}
+
+.scExportBar tr {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: calc(100vw - 40px);
+    height: 20px;
+}
+
+.scExportBar td {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}

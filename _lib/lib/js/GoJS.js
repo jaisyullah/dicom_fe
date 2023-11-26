@@ -1,0 +1,1 @@
+alert("GoJS library is no longer available for native use in Scriptcase. Find out more information by accessing:\nhttps://help.scriptcase.net/portal/en/kb/articles/gojs-library-is-no-longer-available\n\nSee the link below for more details about new components developed by our team:\nhttps://help.scriptcase.net/portal/en/kb/articles/new-examples-for-diagrams-7-7-2020");

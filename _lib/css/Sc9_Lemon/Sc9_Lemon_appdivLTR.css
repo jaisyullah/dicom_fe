@@ -1,0 +1,17 @@
+.scAppDivHeaderText { text-align: left }
+.scAppDivContentText { text-align: left }
+.scAppDivSelectFieldsEnabled { text-align: left }
+.scAppDivSelectFieldsDisabled { text-align: left }
+.scAppDivSelectBoxEnabled { text-align: left }
+.scAppDivSelectBoxDisabled { text-align: left }
+.scAppDivTabLine { text-align: left }
+.scExportEmailLabelSent { text-align: center }
+.scGridFilterTagListItemClose:after { text-align: center }
+.scGridFilterTagClose:after { text-align: center }
+.scGridFilterTagListFilterLabelClose:after { text-align: center }
+.scGridQuickSearchDivLabel { text-align: left }
+.scGridQuickSearchDivResult .select2-selection__rendered, .scGridQuickSearchDivResult .select2-search__field { text-align: left !important }
+.scGridQuickSearchDivResult .select2-selection__choice { text-align: left !important }
+.scGridQuickSearchDivDropdown .select2-results__option { text-align: left !important }
+.scGridQuickSearchDivDropdown .select2-results__option--highlighted { text-align: left !important }
+.scGridQuickSearchDivDropdown .select2-results__option[aria-selected="true"] { text-align: left !important }

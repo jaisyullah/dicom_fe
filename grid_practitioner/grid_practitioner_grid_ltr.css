@@ -1,0 +1,8 @@
+.css_practitioner_nik_label, .css_practitioner_nik_label:hover {text-align:left;vertical-align:middle;justify-content:left;font-weight:bold;}
+.css_practitioner_nik_grid_line, .css_practitioner_nik_grid_line:hover {vertical-align: top;text-align: left;}
+.css_name_label, .css_name_label:hover {text-align:left;vertical-align:middle;justify-content:left;font-weight:bold;}
+.css_name_grid_line, .css_name_grid_line:hover {vertical-align: top;text-align: left;}
+.css_ihs_no_label, .css_ihs_no_label:hover {text-align:left;vertical-align:middle;justify-content:left;font-weight:bold;}
+.css_ihs_no_grid_line, .css_ihs_no_grid_line:hover {vertical-align: top;text-align: left;}
+.css_id_label, .css_id_label:hover {text-align:right;vertical-align:middle;justify-content:right;font-weight:bold;}
+.css_id_grid_line, .css_id_grid_line:hover {vertical-align: top;text-align: right;}

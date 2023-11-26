@@ -1,0 +1,10 @@
+.css_patient_nik_label, .css_patient_nik_label:hover {text-align:left;vertical-align:middle;justify-content:left;font-weight:bold;}
+.css_patient_nik_grid_line, .css_patient_nik_grid_line:hover {vertical-align: top;text-align: left;}
+.css_name_label, .css_name_label:hover {text-align:left;vertical-align:middle;justify-content:left;font-weight:bold;}
+.css_name_grid_line, .css_name_grid_line:hover {vertical-align: top;text-align: left;}
+.css_no_ihs_label, .css_no_ihs_label:hover {text-align:left;vertical-align:middle;justify-content:left;font-weight:bold;}
+.css_no_ihs_grid_line, .css_no_ihs_grid_line:hover {vertical-align: top;text-align: left;}
+.css_patient_rm_label, .css_patient_rm_label:hover {text-align:left;vertical-align:middle;justify-content:left;font-weight:bold;}
+.css_patient_rm_grid_line, .css_patient_rm_grid_line:hover {vertical-align: top;text-align: left;}
+.css_id_label, .css_id_label:hover {text-align:right;vertical-align:middle;justify-content:right;font-weight:bold;}
+.css_id_grid_line, .css_id_grid_line:hover {vertical-align: top;text-align: right;}

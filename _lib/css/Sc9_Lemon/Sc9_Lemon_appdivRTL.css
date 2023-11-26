@@ -1,0 +1,19 @@
+.scAppDivHeaderText { text-align: right }
+.scAppDivContentText { text-align: right }
+.scAppDivToolbar { text-align: right }
+.scAppDivToolbarInput { text-align: right }
+.scAppDivSelectFieldsEnabled { text-align: right }
+.scAppDivSelectFieldsDisabled { text-align: right }
+.scAppDivSelectBoxEnabled { text-align: right }
+.scAppDivSelectBoxDisabled { text-align: right }
+.scAppDivTabLine { text-align: right }
+.scExportEmailLabelSent { text-align: center }
+.scGridFilterTagListItemClose:after { text-align: center }
+.scGridFilterTagClose:after { text-align: center }
+.scGridFilterTagListFilterLabelClose:after { text-align: center }
+.scGridQuickSearchDivLabel { text-align: right }
+.scGridQuickSearchDivResult .select2-selection__rendered, .scGridQuickSearchDivResult .select2-search__field { text-align: right !important }
+.scGridQuickSearchDivResult .select2-selection__choice { text-align: right !important }
+.scGridQuickSearchDivDropdown .select2-results__option { text-align: right !important }
+.scGridQuickSearchDivDropdown .select2-results__option--highlighted { text-align: right !important }
+.scGridQuickSearchDivDropdown .select2-results__option[aria-selected="true"] { text-align: right !important }

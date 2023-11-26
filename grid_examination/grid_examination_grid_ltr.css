@@ -1,0 +1,18 @@
+.css_id_label, .css_id_label:hover {text-align:right;vertical-align:middle;justify-content:right;font-weight:bold;}
+.css_id_grid_line, .css_id_grid_line:hover {vertical-align: top;text-align: right;}
+.css_patient_rm_label, .css_patient_rm_label:hover {text-align:left;vertical-align:middle;justify-content:left;font-weight:bold;}
+.css_patient_rm_grid_line, .css_patient_rm_grid_line:hover {vertical-align: top;text-align: left;}
+.css_jenis_pemeriksaan_label, .css_jenis_pemeriksaan_label:hover {text-align:left;vertical-align:middle;justify-content:left;font-weight:bold;}
+.css_jenis_pemeriksaan_grid_line, .css_jenis_pemeriksaan_grid_line:hover {vertical-align: top;text-align: left;}
+.css_tgl_pemeriksaan_label, .css_tgl_pemeriksaan_label:hover {text-align:center;vertical-align:middle;justify-content:center;font-weight:bold;}
+.css_tgl_pemeriksaan_grid_line, .css_tgl_pemeriksaan_grid_line:hover {vertical-align: top;text-align: center;}
+.css_dpjp_label, .css_dpjp_label:hover {text-align:right;vertical-align:middle;justify-content:right;font-weight:bold;}
+.css_dpjp_grid_line, .css_dpjp_grid_line:hover {vertical-align: top;text-align: right;}
+.css_accno_label, .css_accno_label:hover {text-align:left;vertical-align:middle;justify-content:left;font-weight:bold;}
+.css_accno_grid_line, .css_accno_grid_line:hover {vertical-align: top;text-align: left;}
+.css_identifiersr_label, .css_identifiersr_label:hover {text-align:left;vertical-align:middle;justify-content:left;font-weight:bold;}
+.css_identifiersr_grid_line, .css_identifiersr_grid_line:hover {vertical-align: top;text-align: left;}
+.css_mwl_label, .css_mwl_label:hover {text-align:center;vertical-align:middle;justify-content:center;font-weight:bold;}
+.css_mwl_grid_line, .css_mwl_grid_line:hover {text-align: center;}
+.css_satusehat_label, .css_satusehat_label:hover {text-align:center;vertical-align:middle;justify-content:center;font-weight:bold;}
+.css_satusehat_grid_line, .css_satusehat_grid_line:hover {text-align: center;}

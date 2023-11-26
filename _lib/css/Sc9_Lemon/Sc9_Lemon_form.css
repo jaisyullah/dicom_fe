@@ -1,0 +1,189 @@
+.scFormPage { background-color: #FEFFFE; background-image: none; opacity: 1; filter: alpha(opacity=100); color: #1B211F; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; margin: 20px; text-decoration: none }
+.scFormBorder { background-color: #FFFFFF; background-image: none; opacity: 1; filter: alpha(opacity=100); padding: 0; margin: css_form_moldura_margin; border-collapse: collapse; border-color: #A8D4C7; border-style: solid; border-width: 1px; -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none }
+.scFormPageText { color: #1B211F; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; text-decoration: none }
+.scFormColorPaleteItem { background-size: contain; cursor: pointer; width: 16px; height: 16px; display: inline-block; margin: 0 2px 0 0; border-width: 1px; border-style: solid; border-color: #000 }
+.scFormColorPaleteItemChecked { background-image: url(../../img/scriptcase__NM__ico__NM__check_checkbox.png) }
+.scFormHeader { background-color: #247159; background-image: none; opacity: 1; filter: alpha(opacity=100); border-color: #247159; border-style: solid; border-width: 1px }
+.scFormHeaderFont { color: #F6FFFC; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold; text-decoration: none }
+.scFormFooter { background-image: none; opacity: 1; filter: alpha(opacity=100) }
+.scFormFooterFont { color: #999999; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold; text-decoration: none }
+.scFormToolbarNav { background-image: none; opacity: 1; filter: alpha(opacity=100); color: #247159; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 14px; font-weight: bold; text-decoration: none; padding: 12px; text-align: center; height: 34px; line-height: 10px; display: inline-block; box-sizing: border-box }
+.scFormToolbarNavOpen { background-color: #247159 !important; background-image: none; opacity: 1; filter: alpha(opacity=100); color: #fff; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 14px; font-weight: bold; text-decoration: none; border-color: #247159; border-style: none; padding: 12px; -moz-border-radius: 30px; -webkit-border-radius: 30px; border-radius: 30px; text-align: center; height: 34px; line-height: 10px; display: inline-block; box-sizing: border-box }
+.scFormToolbar { background-color: #fff; background-image: none; opacity: 1; filter: alpha(opacity=100); padding: 20px; border-color: #A8D4C7; border-style: none; border-width: 0; margin: -2px -1px }
+.scFormToolbarPadding { padding: 20px }
+.scFormToolbarInput { background-color: #f9fafc; box-shadow: 0 2px 6px 0 rgba(227,234,239,.5); background-image: none; opacity: 1; filter: alpha(opacity=100); border-color: #A8D4C7; border-style: solid; border-width: 1px; color: #313a46; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; padding: 0 10px; text-decoration: none; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; height: 34px; line-height: 34px }
+.scFormToolbarInputText { color: #313a46; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; text-decoration: none; background: transparent }
+.scFormToolbarInputText:focus { outline: none !important }
+.scFormToolbarInput:focus { background-image: none; opacity: 1; filter: alpha(opacity=100); border-color: #A8D4C7; color: #313a46; box-shadow: none }
+.scFormToolbarInputWm { color: #313a46 }
+.scFormTable { background-color: #FFFFFF; box-shadow: none; background-image: none; opacity: 1; filter: alpha(opacity=100); border-collapse: collapse; border-color: #A8D4C7; border-style: none; border-width: 0; margin: 10px auto; width: 97.5% }
+.scFormTableTd { padding: 0 }
+.scFormLabelLink { color: #FFFFFF; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold; text-decoration: none; vertical-align: middle }
+.scFormLabelOdd { background-color: #F6FFFC; background-image: none; opacity: 1; filter: alpha(opacity=100); border-color: #A8D4C7; border-style: none; border-width: 0; color: #1B211F; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; padding: 10px 15px; text-decoration: none; vertical-align: top }
+.scFormHelpOdd { background-image: none; opacity: 1; filter: alpha(opacity=100); color: #6c757d; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; padding: 0 4px; text-decoration: none }
+.scFormLabelOddMult { background-color: #A8D4C7; box-shadow: 0 0 35px 0 rgba(154,161,171,.15); background-image: none; border-color: #A8D4C7; border-style: solid; border-width: 1px 0; color: #247159; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold; padding: 10px 15px; text-decoration: none; vertical-align: middle }
+.scFormHelpOddMult { background-image: none; opacity: 1; filter: alpha(opacity=100); color: #6c757d; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; padding: 0 4px; text-decoration: none }
+.scFormLabelOddMult:hover { background-color: #A8D4C7; box-shadow: 0 0 5px 0 rgba(154,161,171,.5); background-image: none; opacity: 1; filter: alpha(opacity=100); color: #1B211F; text-decoration: none; border-color: #A8D4C7; border-style: solid; border-width: 1px }
+.scFormLabelOddMult:hover .scFormLabelLink { color: #1B211F }
+.scFormHelpOddMult:hover { background-image: none; opacity: 1; filter: alpha(opacity=100); color: #6c757d; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; padding: 0 4px; text-decoration: none }
+.scFormLabelOddFormat { color: #1B211F; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; text-decoration: none }
+.scFormLabelOddFormatMult { color: #247159; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold; text-decoration: none }
+.scFormRequiredOdd { color: #9f3a38; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold }
+.scFormRequiredOddMult { color: #9f3a38; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold }
+.scFormRequiredOddColor { color: #9f3a38; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold }
+.scFormRequiredOddColorMult { color: #9f3a38; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold }
+.scFormObjectOdd, .ui-dropdownchecklist-selector-wrapper > .ui-dropdownchecklist-selector { background-color: #f9fafc; box-shadow: 0 2px 6px 0 rgba(227,234,239,.5); background-image: none; opacity: 1; filter: alpha(opacity=100); border-color: #A8D4C7; border-style: solid; border-width: 1px; color: #313a46; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; padding: 4px 10px; text-decoration: none; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px }
+.scFormObjectOddPwdBox { background-color: #f9fafc; box-shadow: 0 2px 6px 0 rgba(227,234,239,.5); background-image: none; opacity: 1; filter: alpha(opacity=100); border-color: #A8D4C7; border-style: solid; border-width: 1px; padding: 0; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; display: inline-block }
+.scFormObjectOddPwdInput { padding: 4px 10px; border-width: 0; border-style: none; background-color: transparent }
+.scFormObjectOddPwdText { color: #313a46; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; text-decoration: none }
+.select2-container--default .select2-selection { background-color: #f9fafc; box-shadow: 0 2px 6px 0 rgba(227,234,239,.5); background-image: none; opacity: 1; filter: alpha(opacity=100); border-color: #A8D4C7; border-style: solid; border-width: 1px; color: #313a46; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; text-decoration: none; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px }
+.scFormPage .ui-menu .ui-menu-item, .scFormTable .select2-container--default .select2-selection--single .select2-selection__rendered, .scFormPage .select2-container--default .select2-results__option[aria-selected="true"] { color: #313a46 }
+.jSignature { background-color: #f9fafc }
+.scFormPage .ui-menu .ui-menu-item, .scFormPage .select2-container .select2-dropdown { background-color: #f9fafc; border-color: #A8D4C7 }
+.scFormPage .select2-container--default .select2-results__option[aria-selected="true"] { background-color: #5897fb; color: white }
+.scFormObjectOddMult, .ui-dropdownchecklist-selector-wrapper > .ui-dropdownchecklist-selector { background-color: #f9fafc; box-shadow: 0 2px 6px 0 rgba(227,234,239,.5); background-image: none; opacity: 1; filter: alpha(opacity=100); border-color: rgba(0,0,0,.05); border-style: solid; border-width: 1px; color: #313a46; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; padding: 4px 10px; text-decoration: none; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px }
+.scFormObjectOddMultPwdBox { background-color: #f9fafc; box-shadow: 0 2px 6px 0 rgba(227,234,239,.5); background-image: none; opacity: 1; filter: alpha(opacity=100); border-color: rgba(0,0,0,.05); border-style: solid; border-width: 1px; padding: 0; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; display: inline-block }
+.scFormObjectOddMultPwdInput { padding: 4px 10px; border-width: 0; border-style: none; background-color: transparent }
+.scFormObjectOddMultPwdText { color: #313a46; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; text-decoration: none }
+.scFormTable .select2-container--default .select2-selection--single .select2-selection__rendered { color: #313a46 }
+.scFormObjectOddSpin { font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana !important; font-size: 13px !important }
+.scFormObjectOddMultSpin { font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana !important; font-size: 13px !important }
+.scFormObjectFocusOdd, .ui-dropdownchecklist-selector-wrapper > .ui-dropdownchecklist-selector:focus { background-color: #F9FAFC; background-image: none; opacity: 1; filter: alpha(opacity=100); border-color: #A8D4C7; border-style: solid; border-width: 1px; color: #6c757d; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; padding: 4px 10px; text-decoration: none; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6); outline: none }
+.scFormObjectFocusOddPwdBox { background-color: #F9FAFC; background-image: none; opacity: 1; filter: alpha(opacity=100); border-color: #A8D4C7; border-style: solid; border-width: 1px; padding: 0; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6); display: inline-block }
+.scFormObjectFocusOddPwdInput { padding: 4px 10px; border-width: 0; border-style: none; background-color: transparent; outline: none }
+.scFormObjectFocusOddPwdText { color: #6c757d; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; text-decoration: none }
+.scFormObjectFocusOddMult, .ui-dropdownchecklist-selector-wrapper > .ui-dropdownchecklist-selector:focus { background-color: #F9FAFC; background-image: none; opacity: 1; filter: alpha(opacity=100); border-color: transparent; border-style: solid; border-width: 1px; color: #6c757d; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; padding: 4px 10px; text-decoration: none; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; box-shadow: none; outline: none }
+.scFormObjectFocusOddMultPwdBox { background-color: #F9FAFC; background-image: none; opacity: 1; filter: alpha(opacity=100); border-color: transparent; border-style: solid; border-width: 1px; padding: 0; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; box-shadow: none; display: inline-block }
+.scFormObjectFocusOddMultPwdInput { padding: 4px 10px; border-width: 0; border-style: none; background-color: transparent; outline: none }
+.scFormObjectFocusOddMultPwdText { color: #6c757d; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; text-decoration: none }
+.scFormDataOdd { background-color: #F6FFFC; background-image: none; opacity: 1; filter: alpha(opacity=100); border-color: #A8D4C7; border-style: none; border-width: 0; color: #1B211F; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; padding: 10px 15px; text-decoration: none; display: css_form_campo_impar_simples_display }
+.scFormDataHelpOdd { background-image: none; opacity: 1; filter: alpha(opacity=100); color: #888888; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; padding: 0 10px; text-decoration: none; letter-spacing: 1px; display: inline-block }
+.scFormDataTagOdd { opacity: 1; filter: alpha(opacity=100); font-size: 1em }
+.scFormDataOddMult { background-color: #F6FFFC; background-image: none; opacity: 1; filter: alpha(opacity=100); border-color: #A8D4C7; border-style: solid; border-width: 1px 0; color: #1B211F; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; padding: 10px 15px; text-decoration: none }
+.scFormDataHelpOddMult { background-image: none; opacity: 1; filter: alpha(opacity=100); color: #6c757d; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; padding: 0 4px; text-decoration: none }
+.scFormDataTagOddMult { opacity: 1; filter: alpha(opacity=100); font-size: 1em }
+.scFormDataFontOdd { color: #1B211F; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; text-decoration: none }
+.scFormDataFontOdd input[type=checkbox] + label, .scFormDataFontOdd input[type=radio] + label { position: relative; top: -1px }
+.scFormDataFontOddMult { color: #1B211F; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; text-decoration: none }
+.scFormDataFontOdd .highlight { background-image: none; opacity: 1; filter: alpha(opacity=100); color: #ff0000; display: inline-block }
+.scFormDataFontOddMult .highlight { background-image: none; opacity: 1; filter: alpha(opacity=100); color: #ff0000; display: inline-block }
+.scFormLinkOdd { color: #6c757d; text-decoration: underline }
+.scFormLinkOddMult { color: #6c757d; text-decoration: underline }
+.scFormLabelLinkOdd { text-decoration: none }
+.scFormLabelLinkOddMult { color: #247159; text-decoration: none }
+.scFormInputError { background-color: #FFF6F6; background-image: none; opacity: 1; filter: alpha(opacity=100); color: #9f3a38; border-color: #e0b4b4 }
+.scFormInputErrorPwdBox { background-color: #FFF6F6; background-image: none; opacity: 1; filter: alpha(opacity=100); color: #9f3a38; border-color: #e0b4b4 }
+.scFormInputErrorPwdText { color: #9f3a38 }
+.scFormInputErrorMult { background-color: #FFF6F6; background-image: none; opacity: 1; filter: alpha(opacity=100); color: #9f3a38; border-color: #e0b4b4 }
+.scFormInputErrorMultPwdBox { background-color: #FFF6F6; background-image: none; opacity: 1; filter: alpha(opacity=100); color: #9f3a38; border-color: #e0b4b4 }
+.scFormInputErrorMultPwdText { color: #9f3a38 }
+.scFormInputDisabled, .ui-dropdownchecklist-selector-wrapper > .ui-state-disabled { background-color: #CCCCCC; background-image: none; opacity: 1; filter: alpha(opacity=100); color: #6c757d }
+.scFormInputDisabledMult, .ui-dropdownchecklist-selector-wrapper > .ui-state-disabled { background-color: #CCCCCC; background-image: none; opacity: 1; filter: alpha(opacity=100); color: #6c757d }
+.ui-dropdownchecklist-selector-wrapper > .ui-state-disabled > .ui-dropdownchecklist-text { color: #6c757d }
+.sc-ui-pwd-eye { margin-left: 5px; margin-right: 5px }
+.scFormDataDragNDrop { background-color: #F9FAFC; background-image: none; opacity: 1; filter: alpha(opacity=100); border-color: #A8A8A8; border-style: dashed; border-width: 2px; color: #6c757d; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; padding: 25px; text-decoration: none; margin: 15px 4px }
+.scFormMessageTable { background-color: #FFFAC1; background-image: none; opacity: 1; filter: alpha(opacity=100); border-collapse: collapse; border-color: #DBCE9C; border-style: none; border-width: 0; height: 40px; width: 280px }
+.scDebugWindow { position: fixed !important; top: 50% !important; left: 50% !important; transform: translate(-50%,-50%) !important; z-index: 10 !important }
+.scFormMessageTitle { background-image: none; opacity: 1; filter: alpha(opacity=100); border-style: none; color: #000; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold; padding: 4px; text-decoration: none; vertical-align: middle }
+.scFormMessageTitleFont { color: #000; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold; text-decoration: none }
+.scFormMessageMessage { background-image: none; opacity: 1; filter: alpha(opacity=100); color: #000; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold; padding: 10px; text-decoration: none }
+.scFormMessageMessageFont { color: #000; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold; text-decoration: none }
+.scFormErrorTable { background-color: #FEDEE5; background-image: none; opacity: 1; filter: alpha(opacity=100); border-color: #A8D4C7; border-style: none; border-width: 0; height: 30px; width: 320px }
+.scFormErrorTitle { background-image: none; opacity: 1; filter: alpha(opacity=100); border-style: none; color: #823040; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold; padding: 4px; text-decoration: none; vertical-align: middle }
+.scFormErrorTitleFont { color: #823040; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold; text-decoration: none }
+.scFormErrorMessage { background-image: none; opacity: 1; filter: alpha(opacity=100); color: #823040; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold; padding: 10px; text-decoration: none }
+.scFormErrorMessageFont { color: #823040; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold; text-decoration: none }
+.scFormErrorLine { background-image: none; opacity: 1; filter: alpha(opacity=100); color: #823040; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold; padding: 10px 15px; letter-spacing: 0px; text-decoration: none }
+.scFormFieldErrorTable { background-image: none; opacity: 1; filter: alpha(opacity=100); border-collapse: collapse; border-color: #A8D4C7; border-style: none; border-width: 0; -moz-border-radius: css_fielderror_radius; -webkit-border-radius: css_fielderror_radius; border-radius: css_fielderror_radius; position: relative }
+.scFormFieldErrorMessage { background-image: none; opacity: 1; filter: alpha(opacity=100); color: #ff0000; font-family: Arial, sans-serif; font-size: 12px; padding: 0 10px; text-decoration: none; vertical-align: middle }
+.scFormBlock { background-color: #A8D4C7; background-image: none; opacity: 1; filter: alpha(opacity=100); border-color: #A8D4C7; border-style: solid; border-width: 1px; color: #247159; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold; padding: 10px 15px; text-decoration: none; vertical-align: middle }
+.scFormBlockFont { color: #247159; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold; text-decoration: none }
+.scFormBlockAlign { color: #247159; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold; text-decoration: none; vertical-align: middle }
+.scFormProcess { color: #6c757d; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; text-decoration: none }
+.scFormProcessFixed { background-color: #FFF; border-style: none; height: 26px; padding-top: 13px; position: absolute; text-align: center; width: 350px }
+.scFormHelpPage { background-color: #fafbfe; background-image: none; background-repeat: repeat-x; opacity: 1; filter: alpha(opacity=100); color: #6c757d; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; text-decoration: none }
+.scFormPopup { border-collapse: collapse; display: none; position: absolute; z-index: 50 }
+.scFormPopupCorner { height: 15px; width: 19px }
+.scFormPopupTopLeft { background-image: url(../../img/scriptcase__NM__help_topLeftCorner.png); padding: 0 }
+.scFormPopupTop { background-image: url(../../img/scriptcase__NM__help_topLine.png); padding: 0 }
+.scFormPopupTopRight { background-image: url(../../img/scriptcase__NM__help_topRightCorner.png); padding: 0 }
+.scFormPopupLeft { background-image: url(../../img/scriptcase__NM__help_leftColumn.png); padding: 0 }
+.scFormPopupRight { background-image: url(../../img/scriptcase__NM__help_rightColumn.png); padding: 0 }
+.scFormPopupBottomLeft { background-image: url(../../img/scriptcase__NM__help_bottomLeftCorner.png); padding: 0 }
+.scFormPopupBottom { background-image: url(../../img/scriptcase__NM__help_bottomLine.png); padding: 0; text-align: center }
+.scFormPopupBottom img { display: block; margin: 0 auto }
+.scFormPopupBottomRight { background-image: url(../../img/scriptcase__NM__help_bottomRightCorner.png); padding: 0 }
+.scFormPopupContent { background-color: #FFFFFF; background-image: none; opacity: 1; filter: alpha(opacity=100); color: #6c757d; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-style: normal; text-decoration: none }
+.scButtonMultiUploadSend { float: left }
+.scButtonMultiUploadSend:hover { cursor: pointer }
+.TB_overlayBG { background-color: #6e6e6e }
+#TB_window { border-style: none; background-color: #FEFFFE }
+.sc-cal-categ .sc-cal-categ-input-caret { position: absolute; cursor: default; top: 9px; right: 10px; font-size: 12px; transform: scale(1,0.75) }
+.sc-cal-categ { position: relative }
+.sc-cal-categ-item .sc-cal-categ-colorbox { width: 17px; height: 17px; float: left; margin-right: 10px }
+.sc-cal-categ > .sc-cal-categ-input { box-sizing: border-box; width: 100% !important; display: block !important }
+.sc-cal-categ-dropdown { position: absolute; top: 30px !important; left: 0px !important; width: 99% !important }
+.scFormACTable { border-collapse: collapse; border-color: #A8D4C7; border-style: solid; border-width: 1px }
+.scFormACTitle { background-color: #f2f2f2; background-image: none; opacity: 1; filter: alpha(opacity=100); border-color: #A8D4C7; border-style: solid; border-width: 1px 0; color: #6c757d; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; padding: 8px 4px; text-decoration: none }
+.ac_results { background-color: #FFFFFF; background-image: none; opacity: 1; filter: alpha(opacity=100); border-collapse: collapse; border-color: #A8D4C7; border-style: solid; border-width: 1px; color: #6c757d; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; overflow: hidden; padding: 0; text-decoration: css_ajaxac_linha_par_text_decoration; z-index: 99999 }
+.ac_results ul { list-style: none; list-style-position: outside; margin: 0; padding: 0; width: 100% }
+.ac_results li { cursor: default; display: block; margin: 0; overflow: hidden; padding: 2px 5px; line-height: 16px }
+.ac_odd { background-color: #FFFFFF; background-image: none; opacity: 1; filter: alpha(opacity=100); color: #6c757d; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px }
+.ac_over { background-color: #A8D4C7; background-image: none; opacity: 1; filter: alpha(opacity=100); color: #6c757d; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px }
+.ui-dropdownchecklist-text { color: #313a46; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; text-decoration: none }
+.ui-dropdownchecklist-selector { background-color: #f9fafc; background-image: none; opacity: 1; filter: alpha(opacity=100); color: #313a46; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px }
+.ui-dropdownchecklist-dropcontainer { background-color: #f9fafc; background-image: none; opacity: 1; filter: alpha(opacity=100); color: #313a46; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px }
+.scBtnPassField { margin: 10px 5px }
+#sc_b_summary_b { font-size: 13px }
+.fileinput-button-padding { margin-top: 5px }
+.ui-front { z-index: 9999 }
+#sc_b_navpage_t,#sc_b_navpage_b { padding: 0 }
+.scAjaxDiv { background-image: none; opacity: 1; filter: alpha(opacity=100); color: #6c757d; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; text-decoration: none; border-collapse: collapse; border-style: none; padding: 15px 0 0 0 }
+.lcs_checkbox_switch { display: inline-block; position: relative; overflow: hidden; transition: all .2s ease-in-out; width: 29px; height: 15px; cursor: pointer; background-color: #DDDDDD; background-image: none; margin: 5px 7px }
+.lcs_checkbox_switch:after { content: "\002714"; display: inline-block; position: absolute; overflow: hidden; top: 1px; left: 5px; font-size: 9px; transition: all .2s; opacity: 0; filter: alpha(opacity=0); color: #6c757d }
+.lcs_checkbox_switch.lcs_on { background-color: #66afe9; background-image: none }
+.lcs_checkbox_switch.lcs_on:after { opacity: 1; filter: alpha(opacity=100) }
+.lcs_checkbox_switch .lcs_cursor { display: inline-block; position: absolute; overflow: hidden; top: 1px; left: 1px; z-index: 10; transition: all .2s linear; width: 13px; height: 13px; background-color: #FFFFFF; background-image: none }
+.lcs_checkbox_switch.lcs_off .lcs_cursor { display: inline-block; position: absolute; overflow: hidden; top: 1px; left: 1px; z-index: 10; transition: all .2s linear; width: 13px; height: 13px; background-color: #FFFFFF; background-image: none }
+.lcs_checkbox_switch.lcs_on .lcs_cursor  { left: calc(100% - 1px); transform: translateX(-100%) }
+.lcs_radio_switch { display: inline-block; position: relative; overflow: hidden; transition: all .2s ease-in-out; width: 12px; height: 12px; border-width: 1px; border-color: #66afe9; border-style: solid; cursor: pointer; background-color: rgba(0,0,0,0); background-image: none; margin: 5px 7px }
+.lcs_radio_switch.lcs_off { display: inline-block; position: relative; overflow: hidden; transition: all .2s ease-in-out; width: 12px; height: 12px; border-width: 1px; border-color: #66afe9; border-style: solid; cursor: pointer; background-color: rgba(0,0,0,0); background-image: none; margin: 5px 7px }
+.lcs_radio_switch.lcs_on { background-color: rgba(0,0,0,0); background-image: none }
+.lcs_radio_switch .lcs_cursor { display: inline-block; position: absolute; overflow: hidden; top: -1px; left: -1px; z-index: 10; transition: all .1s linear; transform: scale(0); width: 14px; height: 14px; border-width: 1px; background-color: #66afe9; background-image: none }
+.lcs_radio_switch.lcs_off .lcs_cursor { display: inline-block; position: absolute; overflow: hidden; top: -1px; left: -1px; z-index: 10; transition: all .1s linear; transform: scale(0); width: 14px; height: 14px; border-width: 1px; background-color: #66afe9; background-image: none }
+.lcs_radio_switch.lcs_on .lcs_cursor  { transform: scale(1); left: -1px }
+.lcs_switch.lcs_on { box-shadow: none }
+.lcs_checkbox_switch.lcs_switch.lcs_off { background-color: rgba(178, 178, 178, 0.4); box-shadow: 0px 0px 2px rgba(164, 164, 164, 0.8) inset }
+.sc.switch, .sc.radio { margin: 2px 5px 2px 0 }
+.sc.switch input, .sc.radio input { position: absolute!important }
+.sc.switch span { min-width: 22px }
+.sc.radio span { min-width: 12px; min-height: 12px }
+.ui-slider-horizontal { background-color: #dee2e6; background-image: none; opacity: 1; filter: alpha(opacity=100); border-color: #FFFFFF !important; border-style: none; border-collapse: collapse; margin: 0 auto; height: .3em !important }
+.ui-slider-horizontal > .ui-slider-range { background-color: #247159; background-image: none; opacity: 1; filter: alpha(opacity=100); border-collapse: collapse }
+.ui-slider-horizontal > .ui-state-default { background: #247159 !important; background-image: none; opacity: 1; filter: alpha(opacity=100); border-color: #FFFFFF !important; border-collapse: collapse; margin: 0 0 0 -7px !important; -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; top: -4px !important; outline: none }
+.ui-slider-horizontal > .ui-slider-handle { width: 0.5em !important; height: 0.8em !important }
+.ui-slider-horizontal > .ui-state-hover { background-image: none; opacity: 1; filter: alpha(opacity=100); border-collapse: collapse }
+.ui-slider-horizontal > .ui-state-active { background-image: none; opacity: 1; filter: alpha(opacity=100); border-collapse: collapse }
+.sc-ui-100perc-table { table-layout: fixed }
+.sc-ui-100perc-span-input { display: -webkit-box; display: flex; flex-direction: row; flex-wrap: nowrap; -webkit-box-pack: flex-start; justify-content: flex-start; align-items: center }
+.sc-ui-100perc-span-select { display: -webkit-box; display: flex; -webkit-box-flex: 1; -webkit-flex: 1; flex-grow: 1 }
+.sc-ui-100perc-input { display: -webkit-box; display: flex; -webkit-box-flex: 1; -webkit-flex: 1; flex-grow: 1 }
+.sc-steps { background-color: #FFFFFF; background-image: none; padding: 0; margin: 15px; border-collapse: collapse; border-color: #A8D4C7; border-style: none; border-width: 0 }
+.sc-steps.is-boxed { border-style: solid; border-width: 1px }
+.sc-steps.is-boxed .item + .item, .sc-steps.is-boxed .item + .item::after { border-color: #A8D4C7 }
+.sc-ui-form-step-done .title { color: #28a745; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold; opacity: 1; filter: alpha(opacity=100) }
+.sc-ui-form-step-done .icon { color: #28a745; opacity: 1; filter: alpha(opacity=100) }
+.sc-steps .item.is-complete { color: #28a745 }
+.sc-steps.is-lined .item.is-complete::before,.sc-steps.is-numbered .item.is-complete::before { background-color: #28a745 }
+.sc-ui-form-step-done .description { color: #28a745; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; opacity: 1; filter: alpha(opacity=100) }
+.sc-ui-form-step-now .title { color: #727cf5; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold; opacity: 1; filter: alpha(opacity=100) }
+.sc-ui-form-step-now .icon { color: #727cf5; opacity: 1; filter: alpha(opacity=100) }
+.sc-ui-form-step-now .description { color: #727cf5; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; opacity: 1; filter: alpha(opacity=100) }
+.sc-ui-form-step-next .title { color: #313a46; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold; opacity: 0.8; filter: alpha(opacity=80) }
+.sc-ui-form-step-next .icon { color: #313a46; opacity: 0.8; filter: alpha(opacity=80) }
+.sc-ui-form-step-next .description { color: #313a46; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; opacity: 0.8; filter: alpha(opacity=80) }
+.sc-ui-form-step-todo .title { color: #313a46; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; font-weight: bold; opacity: 0.4; filter: alpha(opacity=40) }
+.sc-ui-form-step-todo .icon { color: #313a46; opacity: 0.4; filter: alpha(opacity=40) }
+.sc-ui-form-step-todo .description { color: #313a46; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; font-size: 13px; opacity: 0.4; filter: alpha(opacity=40) }
+.sc-mobile-steps .progress-circle { stroke: #727cf5 }
+.sc-mobile-steps .counter { color: #727cf5; font-family: Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana }

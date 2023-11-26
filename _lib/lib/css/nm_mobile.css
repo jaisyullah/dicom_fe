@@ -1,0 +1,1385 @@
+body > div:not(.viewer-container), body > form, body > table {
+    overflow-x: hidden;
+    opacity: 0 !important;
+}
+
+body.ready > *:not(.viewer-container) {
+    transition: opacity ease 1s;
+    opacity: 1 !important;
+}
+
+body.locked, html.locked {
+    overflow: hidden;
+    height: 100vh;
+}
+
+* {
+    border-collapse: collapse;
+}
+
+.scGridBorder, .scFilterBorder , .scFormBorder {
+    border-color: transparent !important;
+    border-style: none !important;
+    border-width: 0px !important;
+    border-collapse: collapse !important;
+    padding: 0 !important;
+}
+td.scGridBlockFont tr {
+    display: flex;
+    flex-direction: row;
+    max-width: 90vw;
+    flex-wrap: wrap;
+}
+td.scGridBlockFont tr > td {
+    white-space: normal;
+}
+
+.scGridPage > table, .scFilterPage > table , .scFormPage > table , .scFormPage > form > table {
+    width: 100%;
+}
+
+#scrolltop-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    box-sizing: content-box;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    height: 3.5em;
+    width: 3.5em;
+    border-radius: 100%;
+    box-shadow: .1em .1em .1em rgba(0,0,0,.2);
+    transition: all ease .3s;
+    z-index: 11;
+}
+
+#scrolltop-button.right {
+    right: -50px;
+}
+
+#scrolltop-button.left {
+    left: -50px;
+}
+
+#scrolltop-button.low {
+    bottom: 20px;
+}
+
+#scrolltop-button.high {
+    bottom: 70px;
+}
+
+#scrolltop-button.right.active {
+    right: 20px;
+}
+
+#scrolltop-button.left.active {
+    left: 20px;
+}
+
+#scrolltop-button:active {
+    margin: 0 -1px -1px 0;
+    box-shadow: none;
+}
+#scrolltop-button:after {
+    content: "❯";
+    transform: rotate(-90deg);
+    text-align: center;
+    padding-left: 2px;
+    padding-bottom: 2px;
+    font-family: Arial;
+}
+
+.modal-pane-container.scGridPage, .modal-pane-container.scFilterPage , .modal-pane-container.scFormPage, .modal-pane-container.scAppCalendarPage {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    transition: all ease .4s !important;
+    top: 0;
+    left: 0;
+    transform: translate3d(0, 150%, 0);
+    opacity: 1;
+    filter: alpha(opacity=100);
+    background: #fefefe;
+    margin: 0;
+    overflow: hidden;
+}
+.modal-pane-container.active {
+    transform: translate3d(0, 0, 0);
+    z-index: 15;
+}
+
+.modal-pane-container > .modal-pane-wrapper{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.modal-pane-container > .modal-pane-wrapper > .modal-pane-topbar{
+    height: 40px;
+    position: relative;
+    white-space: nowrap;
+
+}
+.modal-pane-container > .modal-pane-wrapper > .modal-pane-topbar-hidden{
+    display: none;
+}
+.modal-pane-container > .modal-pane-wrapper > .modal-pane-topbar > .close-button-box{
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    line-height: 34px;
+    color: #fefefe;
+    text-align: center;
+    /*font-weight: bold;*/
+    font-size: 25px;
+    width: 40px;
+}
+.modal-pane-container > .modal-pane-wrapper > .modal-pane-topbar > .close-button-box:hover{
+    background: rgba(255,255,255,.2);
+}
+.modal-pane-container > .modal-pane-wrapper > .modal-pane-topbar > .title-box {
+    display: inline-block;
+    vertical-align: middle;
+    max-height: 40px;
+    padding: 0 0 0 15px;
+    font-weight: bold;
+    color: #fefefe;
+    text-align: center;
+    font-size: 14px;
+    white-space: normal;
+}
+.modal-pane-container > .modal-pane-wrapper > .modal-pane-content {
+    overflow: scroll;
+    max-width: 100vw;
+    max-height: calc(100vh - 40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+    flex-grow: 1;
+    position: relative;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.modal-pane-container > .modal-pane-wrapper > .modal-pane-content, body, html{
+    /*-webkit-overflow-scrolling:auto !important;*/
+}
+.modal-pane-container > .modal-pane-wrapper > .modal-pane-content > td{
+    display: block;
+    position: relative;
+}
+.modal-pane-container > .modal-pane-wrapper > .modal-pane-content .sc_ui_sortable, .modal-pane-container > .modal-pane-wrapper > .modal-pane-content .sc_ui_sortable_ord{
+    display: block;
+    min-width: 0;
+    min-height: 50vh;
+}
+.modal-pane-container > .modal-pane-wrapper > .modal-pane-content .scAppDivContent.css_scAppDivContentText table{
+    width: 100%;
+}
+.modal-pane-container > .modal-pane-wrapper > .modal-pane-content .scAppDivContent.css_scAppDivContentText #select_orig, .modal-pane-container > .modal-pane-wrapper > .modal-pane-content .scAppDivContent.css_scAppDivContentText #select_orig + td{
+    width: 50%;
+}
+.modal-pane-container > .modal-pane-wrapper > .modal-pane-header{
+
+}
+.modal-pane-container > .modal-pane-wrapper > .modal-pane-footer{
+
+}
+
+#summary_body > td, #sc_grid_body{
+    padding:0px!important;
+}
+.scGridPage, .scFilterPage, .scFormPage{
+    width: 100%;
+    margin:0px!important;
+    position: relative;
+}
+#summary_body > .scGridTabelaTd{
+    display: block !important;
+    width: 100%;
+    overflow-x: scroll;
+}
+#sc_grid_body, #summary_body > td{
+    overflow-x:scroll!important;
+}
+#sc_grid_body{
+    overflow-y: scroll !important;
+    /*max-height: calc(100vh - 200px);*/
+    max-height: 100vh;
+}
+td#sc_grid_toobar_bot{
+    /*display:none!important;*/
+}
+#sc_grid_toobar_top td+td.scGridToolbarPadding{
+    /*display:none!important;*/
+}
+.scGridRefinedSearchMoldura .scAppDivToolbarInput {
+    height: 0px !important;
+}
+
+.scGridRefinedSearchMolduraResult {
+}
+
+.scGridRefinedSearchVejaMais {
+    position: sticky;
+    bottom: 0px;
+}
+
+.scGridFooter{
+    /*display:none!important;*/
+}
+
+.scGridHeaderFont {
+    overflow: hidden;
+    max-width: 50%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.scFilterHeaderFont {
+    overflow: hidden;
+    max-width: 50%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.scFormHeaderFont {
+    overflow: hidden;
+    max-width: 50%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.scGridToolbarPadding {
+    /*white-space: normal;*/
+    /*line-height: 40px;*/
+}
+
+body.ready .SC_SubMenuApp .scBtnGrpBackground {
+    border-width: 0;
+}
+body.ready .scGridRefinedSearchMolduraResult {
+    border-width: 0;
+}
+
+body.ready #sc_grid_content {
+    padding: 0;
+}
+
+.scGridToolbarPadding > a {
+    white-space: nowrap;
+}
+
+.scGridToolbar, .scFilterToolbar , .scFormToolbar,
+.scGridToolbar>tbody, .scFilterToolbar>tbody , .scFormToolbar>tbody { /*, .scGridToolbar > table, .scGridToolbar > tr, .scGridToolbar > td, .scGridToolbar > tbody {*/
+    width: 100vw;
+    max-width: 100vw;
+    table-layout: fixed;
+    display: block;
+    overflow-x: scroll;
+}
+
+/*.scGridToolbar, .scFilterToolbar , .scFormToolbar {*/
+/*    width: 100vw;*/
+/*    max-width: 100vw;*/
+/*    table-layout: fixed;*/
+/*    display: block;*/
+/*    overflow-x: scroll;*/
+/*}*/
+
+.scAjaxDiv {
+    text-align: center;
+}
+
+*{
+    box-sizing: border-box !important;
+}
+
+.headerOptions {
+    width: 3.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    min-height: 53px;
+    transition: all ease .2s;
+}
+
+.headerOptions > div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.headerOptions:active {
+    background: rgba(255,255,255,.2);
+}
+
+.headerOptions .optsDots {
+    content: "";
+    position: relative;
+    overflow: visible;
+    height: 5px;
+    width: 5px;
+    padding: 0;
+    margin: 0;
+    background: currentColor;
+    display: block;
+    border-radius: 100%;
+}
+
+.headerOptions .optsDots:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    height: 5px;
+    width: 5px;
+    padding: 0;
+    margin: 0;
+    background: currentColor;
+    display: block;
+    border-radius: 100%;
+}
+
+.headerOptions .optsDots:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    height: 5px;
+    width: 5px;
+    padding: 0;
+    margin: 0;
+    background: currentColor;
+    display: block;
+    border-radius: 100%;
+}
+
+.overlayToolbar {
+    display: none;
+    background-color: rgba(0,0,0,.5);
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 8;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    40% {
+        -moz-transform: translateX(30px);
+        -ms-transform: translateX(30px);
+        -webkit-transform: translateX(30px);
+        transform: translateX(30px);
+    }
+    60% {
+        -moz-transform: translateX(15px);
+        -ms-transform: translateX(15px);
+        -webkit-transform: translateX(15px);
+        transform: translateX(15px);
+    }
+}
+
+@keyframes flashing {
+    0%{
+        color: #fff;
+    }
+    30% {
+        color: rgba(255,255,255, .1);
+    }
+    60%{
+        color: #fff;
+    }
+    100%{
+        color: #fff;
+    }
+}
+
+.bnc_arrow {
+    font-size: 65px;
+    color: #fff;
+    position: relative;
+    text-align: center;
+    padding-left: 2px;
+    padding-bottom: 2px;
+    font-family: Arial;
+    font-weight: bold;
+    margin-top: -8px;
+    margin-right: -100px;
+    background-size: contain;
+    animation: bounce 2s infinite, flashing 2s infinite .2s;
+}
+.bnc_arrow:after, .bnc_arrow:before {
+    content: "\2039";
+    position: absolute;
+    top: 0;
+    text-align: center;
+    padding-left: 2px;
+    padding-bottom: 2px;
+    font-family: Arial;
+    background-size: contain;
+}
+.bnc_arrow:after {
+    right: -10px;
+    animation: flashing 2s infinite 0s;
+}
+.bnc_arrow:before {
+    left: -10px;
+    animation: flashing 2s infinite .4s;
+}
+
+#slide_signal {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    pointer-events: none;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 170px;
+    background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.4));
+    overflow: hidden;
+}
+
+/*.SC_SubMenuApp {*/
+    /*background: rgba(0,0,0,.2);*/
+    /*position: fixed;*/
+    /*left: 0px !important;*/
+    /*top: 0px !important;*/
+    /*width: 100% !important;*/
+    /*height: 100% !important;*/
+    /*display: block;*/
+/*}*/
+
+.SC_SubMenuApp:not(#add_grid_search), #id_dynamic_search_fields {
+    width: calc(100% - 60px) !important;
+    left: 50% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,.3);
+    z-index: 100;
+    position: fixed !important;
+}
+.SC_SubMenuApp tr td, #id_dynamic_search_fields tr td {
+    border: none;
+}
+.SC_SubMenuApp tr td div *, #id_dynamic_search_fields tr td div *{
+    font-size: 14px;
+}
+.SC_SubMenuApp tr td:after, #id_dynamic_search_fields tr td:after {
+    content: ' ';
+    display: block;
+    width: calc(100% - 0px);
+    margin: 0;
+    height: 1px;
+    border: none;
+    background: rgba(0,0,0,.13);
+}
+.SC_SubMenuApp tr:first-child td, #id_dynamic_search_fields tr:first-child td {
+    padding-top: 10px;
+    border-radius: 5px 5px 0 0;
+}
+.SC_SubMenuApp tr:first-child, #id_dynamic_search_fields tr:first-child {
+    border-radius: 5px 5px 0 0;
+}
+.SC_SubMenuApp tr:last-child td, #id_dynamic_search_fields tr:last-child td {
+    padding-bottom: 10px;
+    border-radius: 0 0 5px 5px;
+}
+.SC_SubMenuApp tr:last-child, #id_dynamic_search_fields tr:last-child {
+    border-radius: 0 0 5px 5px;
+}
+.SC_SubMenuApp tr:only-child td, #id_dynamic_search_fields tr:only-child td {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 5px;
+}
+.SC_SubMenuApp tr:only-child, #id_dynamic_search_fields tr:only-child {
+    border-radius: 5px;
+}
+.SC_SubMenuApp tr:last-child td:after, #id_dynamic_search_fields tr:last-child td:after {
+    display: none;
+}
+.SC_SubMenuApp .scBtnGrpText, #id_dynamic_search_fields .scBtnGrpText {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 42px;
+}
+
+.SC_SubMenuApp:before, #id_dynamic_search_fields:before {
+    content: ' ';
+    height: 15px;
+    width: 15px;
+    top: -10px;
+    background-color: inherit;
+    transform: rotate(90deg);
+}
+
+.submenuOverlay {
+    background-color: rgba(0,0,0,0);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 150%;
+    width: 100%;
+    z-index: 0;
+}
+
+.blockUI.blockOverlay {
+    background-color: rgba(0,0,0,.6) !important;
+}
+
+body #quicksearchph_top img {
+    top: 50%;
+    /*transform: translate(-50%, -50%);*/
+}
+
+.scGridFieldEvenVert, .scGridFieldOddVert {
+    white-space: normal;
+    word-break: break-all;
+}
+#grid_vertical .scGridFieldEvenVert, #grid_vertical .scGridFieldOddVert {
+    word-break: keep-all;
+}
+body .scGridLabelVert a img, body .scGridLabel a img {
+    opacity: 1;
+}
+
+#sc-id-chart-selection, #sc-id-sort {
+    width: 100vw !important;
+    height: 100vh !important;
+    top: 0 !important;
+    left: 0 !important;
+}
+#sc-id-chart-selection {
+    display: flex;
+    flex-direction: row !important;
+}
+#sc-id-chart-menu-type {
+    width: 140px !important;
+}
+
+#sc-id-summ-available li div,
+#sc-id-summ-selected li div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.sc-ui-sumcfg {
+    left: 50% !important;
+    transform: translateX(-50%);
+}
+
+.scGridRefinedSearchCampo td img {
+    opacity: 1 !important;
+    margin: 0 10px 0 0;
+}
+
+.scFilterLabelOdd > span:not(.SC_Field_label_Mob),
+.scFilterLabelOdd > span:not(.SC_Field_label_Mob) > select,
+.scFilterLabelOdd > div,
+.scFilterLabelOdd > input[type="text"],
+.scFilterLabelOdd > textarea,
+.scFilterLabelOdd > select:not(.SC_Cond_Selector),
+.scFilterLabelEven > span:not(.SC_Field_label_Mob),
+.scFilterLabelEven > span:not(.SC_Field_label_Mob) > select,
+.scFilterLabelEven > div,
+.scFilterLabelEven > input[type="text"], .scFilterLabelEven > span > input[type="text"],
+.scFilterLabelEven > textarea, .scFilterLabelEven > span> textarea,
+.scFilterLabelEven > select:not(.SC_Cond_Selector) {
+    width: 100% !important;
+    margin: 2px 0;
+}
+
+.scFilterLabelOdd .sc.switch,
+.scFilterLabelEven .sc.switch {
+    height: 25px;
+    vertical-align: middle;
+    flex-direction: row;
+    align-items: center;
+}
+
+.scFilterLabelOdd .sc.switch > span,
+.scFilterLabelEven .sc.switch > span {
+    width: 30px;
+}
+
+.scFilterLabelOdd .sc.radio > span,
+.scFilterLabelEven .sc.radio > span {
+    width: 20px;
+    height: 20px;
+}
+
+.scFilterLabelOdd .sc.radio > span:after,
+.scFilterLabelEven .sc.radio > span:after {
+    width: 10px;
+    height: 10px;
+    top: 4px;
+    left: 4px;
+}
+
+.scFilterLabelOdd .sc.radio > input:checked + span,
+.scFilterLabelEven .sc.radio > input:checked + span {
+    background: transparent;
+}
+
+.scFilterLabelOdd .sc.switch,
+.scFilterLabelEven .sc.switch,
+.scFilterLabelOdd .sc.radio,
+.scFilterLabelEven .sc.radio {
+    height: 25px;
+    vertical-align: middle;
+    flex-direction: row;
+    align-items: center;
+}
+
+.scFilterLabelOdd .select2-container,
+.scFilterLabelEven .select2-container {
+    width: 100% !important;
+}
+
+/*tr:not(:first-child) > .scFilterLabelOdd:before,*/
+/*tr:not(:first-child) > .scFilterLabelEven:before {*/
+    /*content: ' ';*/
+    /*display: block;*/
+    /*width: 100%;*/
+    /*height: 1px;*/
+    /*margin-right: auto;*/
+    /*margin-left: auto;*/
+    /*margin-top: 20px;*/
+    /*margin-bottom: 10px;*/
+    /*background-color: rgba(0,0,0,0.1);*/
+/*}*/
+
+tr > .scFilterLabelOdd,
+tr > .scFilterLabelEven {
+    padding: 15px 10px 10px 10px !important;
+    border: solid 1px rgba(0,0,0,0.07) !important;
+    margin: 10px 0 !important;
+    border-radius: 3px;
+    /*filter: brightness(.99);*/
+    /*box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);*/
+    position: relative;
+}
+@supports not (-webkit-touch-callout: none) {
+    .scFilterLabelOdd > .SC_Cond_Selector,
+    .scFilterLabelEven > .SC_Cond_Selector {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: transparent;
+        border: solid 0px rgba(0,0,0,0.1);
+        border-width: 0 0px 1px 0px;
+        border-radius: 0;
+        width: auto !important;
+        margin-top: 10px;
+        margin-right: 10px;
+        font-weight: bold;
+        color: inherit;
+        text-align: right;
+        padding: 5px;
+        max-width: 50%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+@supports (-webkit-touch-callout: none) {
+    .modal-pane-content {
+        padding-bottom: 110px !important;
+    }
+}
+
+.SC_Field_label_Mob {
+    max-width: 50%;
+    overflow: auto;
+    white-space: normal;
+    word-break: break-word;
+}
+
+
+/*LOADER*/
+
+.loader-sc {
+    position: relative;
+    opacity: 1;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 75px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.loader-wrapper {
+    position: fixed;
+    opacity: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+body.ready .loader-wrapper {
+    opacity: 0;
+    display: none;
+}
+
+.loader-animation .dot {
+    width: 10px;
+    height: 10px;
+    background: rgba(0,0,0,.5);
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 5px);
+}
+
+.loader-animation .dot1 {
+    left: 0px;
+    -webkit-animation: dot-jump 0.5s cubic-bezier(0.77, 0.47, 0.64, 0.28) alternate infinite;
+    animation: dot-jump 0.5s cubic-bezier(0.77, 0.47, 0.64, 0.28) alternate infinite;
+}
+
+.loader-animation .dot2 {
+    left: 20px;
+    -webkit-animation: dot-jump 0.5s 0.2s cubic-bezier(0.77, 0.47, 0.64, 0.28) alternate infinite;
+    animation: dot-jump 0.5s 0.2s cubic-bezier(0.77, 0.47, 0.64, 0.28) alternate infinite;
+}
+
+.loader-animation .dot3 {
+    left: 40px;
+    -webkit-animation: dot-jump 0.5s 0.4s cubic-bezier(0.77, 0.47, 0.64, 0.28) alternate infinite;
+    animation: dot-jump 0.5s 0.4s cubic-bezier(0.77, 0.47, 0.64, 0.28) alternate infinite;
+}
+
+@-webkit-keyframes dot-jump {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes dot-jump {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+}
+body .scGridToolbar {
+    padding: 0;
+}
+
+body #TB_iframeContent {
+    clear: both;
+    border: none;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 100vw !important;
+    height: auto !important;
+    flex-grow: 1;
+}
+
+.sc.switch > input + span {
+    zoom: 1.6;
+}
+
+.ui-slider span {
+    zoom: 1.6;
+}
+
+.scGridBlock > table {
+    position: sticky;
+    left: 10px;
+    max-width: 100vw;
+}
+
+#id_debug_window {
+    z-index: 1;
+}
+
+body.scAppCalendarPage {
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+.scCalendarBorder {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-grow: 1;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+.scCalendarBorder #calendar {
+    flex-grow: 1;
+    display: inline-flex !important;
+    flex-direction: column;
+    margin-left: 0 !important;
+}
+
+.fc-view-container {
+    flex-grow: 1;
+}
+
+#sc-id-div-config.scGridToolbar {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+#tag_filter_over {
+    position: relative;
+}
+
+#NM_Grid_Search, #NM_Grid_Search > td, #NM_Grid_Search #id_Fgrid_search, #NM_Grid_Search #id_Fgrid_search > *, #NM_Grid_Search #div_grid_search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    z-index: unset;
+}
+
+#NM_Grid_Search #div_grid_search {
+    width: 100vw;
+    overflow-x: scroll;
+    overflow-y: visible;
+}
+
+#add_grid_search {
+    position: relative !important;
+    top: auto;
+}
+
+#close_grid_search {
+    position: sticky;
+    right: -20px;
+    z-index: 9;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #eee;
+    opacity: 1;
+    margin: -10px 0 -10px 20px;
+    box-shadow: 0px 0px 15px 2px rgba(0,0,0,.3);
+    height: 100%;
+}
+.scGridFilterTagListFilter {
+    z-index: 13 !important;
+    position: fixed !important;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    margin: 0 !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.scGridFilterTagListFilterInputs {
+    flex-grow: 1;
+}
+
+div#id_grid_search_add_tag {
+    position: fixed !important;
+    left: 50% !important;
+    top: 100px !important;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,.3);
+}
+
+.scGridSummarySearchLabelclean {
+    visibility: visible!important;
+}
+
+#res_chart_table span:not(.fusioncharts-container) {
+    display: none;
+}
+
+#div_dyn_search .scAppDivToolbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+#div_dyn_search {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+#id_dyn_search_cmd_string {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+#div_dyn_search .scAppDivToolbar a {
+    height: 40px;
+    line-height: 40px;
+}
+
+.sm_counter.floatable {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 40px;
+}
+
+.scGridQuickSearchDivToolbar {
+    display: flex;
+}
+
+.scFilterBorder > table {
+    width: 100vw;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    body {
+        padding: 0;
+    }
+
+    .section_label {
+        width: 90%;
+    }
+
+
+    div#barch > div.chart_holder {
+        width: calc(100% - 20px);
+    }
+
+    .container-line {
+        width: 90%;
+    }
+    .indicator {
+        min-width: 40%;
+    }
+}
+.swap-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 80px;
+}
+.swap-buttons .button-choice {
+    display: block;
+    margin: 10px;
+}
+.swap-buttons .button-choice input {
+    display: none;
+}
+.label-choice-button:before {
+    display: none;
+}
+
+.label-choice-button:after {
+    display: none;
+}
+.swap-buttons .button-choice .label-choice-button {
+    display: block;
+    border-radius: 50px;
+    line-height: 40px;
+    padding: 0 20px;
+    height: auto;
+    font-size: 16px;
+    color: #797979;
+    background: transparent;
+}
+.swap-buttons .button-choice .label-choice-button:hover {
+    background:#dee2e8;
+}
+.swap-buttons .button-choice .label-choice-button:active {
+    background:#dee2e8;
+}
+.swap-buttons .button-choice input:checked + .label-choice-button {
+    background:#dee2e8;
+    color: #1e293b;
+}
+
+.groupped-indicators {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;
+    width: 980px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.groupped-indicators .label-group {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+}
+
+.group-indicator-container {}
+
+.groupped-indicators .group-indicator-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+}
+
+.groupped-indicators .group-indicator-container > div {
+    flex-grow: 1;
+    max-width: 50%;
+    padding: 50px 0 0 0;
+}
+
+
+.scGridLabelVert {
+    width: 40vw;
+    max-width: 40vw;
+    min-width: 40vw;
+}
+
+.scGridLabelVert span {
+    white-space: normal !important;
+    word-break: break-all !important;
+}
+
+.scFilterLabelEven > span, .scFilterLabelOdd > span {
+    white-space: normal;
+}
+
+.scFilterPage input {
+    max-width: 100% !important;
+}
+
+.ui-dropdownchecklist-item label {
+    max-width: 80vw;
+    white-space: break-spaces;
+}
+
+#table_dyn_search {
+    width: 100%;
+}
+#table_dyn_search > tr,
+#table_dyn_search > tbody > tr {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+#table_dyn_search > tr > td:last-child,
+#table_dyn_search > tbody > tr > td:last-child {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+#table_dyn_search > tr > td:first-child,
+#table_dyn_search > tbody > tr > td:first-child {
+    background: #dedede;
+}
+
+.modal-pane-content .scAppDivToolbar {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.modal-pane-content .scAppDivToolbar > a,
+.modal-pane-content .scAppDivToolbar > button {
+    height: 35px;
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.scGridQuickSearchDivToolbar > * {
+    text-align: center;
+    margin: 4px;
+}
+
+.scGridQuickSearchDivToolbar {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.scGridSummarySearchObjeto {
+    height: auto !important;
+}
+
+.searchInputSpacer {
+    display: block !important;
+    height: 10px;
+}
+
+.totalization_fields > tbody > tr,
+.totalization_fields > tr {
+    display: flex;
+    flex-direction: column;
+}
+
+div#sc-id-combination-content {
+    height: auto !important;
+    padding-top: 40px !important;
+}
+
+div#sc-id-combination-table {
+    width: 100vw !important;
+    height: 100vh !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+}
+
+div#sc-id-hide-comb-table {
+    position: fixed;
+    width: 100vw;
+}
+
+.ui-sortable-handle {
+    height: auto !important;
+}
+
+#app_int_search_close, #app_int_search_open {
+    display: none !important;
+}
+
+.scGridSummarySearchCleanBtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    margin: 0 !important;
+    padding: 10px 30px;
+}
+
+.scGridSummarySearchCleanBtn > * {
+    text-align: center;
+    margin: 5px 0;
+}
+
+div#TB_Resumo_Search {
+    width: 100vw !important;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+}
+
+
+a.scGridFilterTagIconCol {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+div#div_descr_refin_search {
+    /* display: flex; */
+    /* flex-direction: row; */
+    position: sticky;
+    left: 0;
+}
+
+.scGridFilterTagList {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 100vw;
+}
+
+a#app_int_search_all_cancel {
+    height: 30px;
+    display: inline-flex !important;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+}
+
+
+span.scGridFilterTagListItemLabel {
+    font-size: 11px;
+}
+
+#app_int_search_toggle {
+    display: none;
+}
+
+#ref_search_btn_bar, #sum_search_btn_bar {
+    position: sticky;
+    left: 0;
+    font-size: 13px !important;
+}
+
+#id_qs_div_b.active,
+#id_qs_div_t.active,
+#id_qs_div_bot.active,
+#id_qs_div_top.active {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin: 0 !important;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    display: block !important;
+    z-index: 20;
+}
+
+.scFilterToolbarPadding input,
+.scFormToolbarPadding input,
+.scGridToolbarPadding input {
+    box-sizing: content-box !important;
+}
+span.select2-container.select2-container--default:not(.select2) {
+    width: 0;
+    height: 0;
+    top: 0 !important;
+    left: 0 !important;
+    pointer-events: none;
+}
+
+span.select2-container.select2-container--default.select2-container--open:not(.select2) {
+    position: fixed !important;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    top: 0 !important;
+    left: 0 !important;
+    background: rgba(0,0,0,.3);
+    pointer-events: none;
+}
+
+span.select2-dropdown{
+    margin: 5vh 10vw 15vh 10vw;
+    width: 80vw !important;
+    /*height: 80vh !important;*/
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,.2);
+    animation: all ease .3s;
+    pointer-events: all;
+}
+
+.select2-results{
+    visibility: hidden;
+}
+
+span.select2-container.select2-container--default.select2-container--open:not(.select2) span.select2-dropdown {
+    margin: 10vh 10vw 10vh 10vw;
+    animation: all ease .3s;
+}
+
+span.select2-container.select2-container--default.select2-container--open.open_test:not(.select2) span.select2-dropdown {
+    margin: 100vh 10vw 10vh 10vw;
+    animation: all ease .3s;
+}
+
+span.select2-container.select2-container--default.select2-container--open:not(.select2) span.select2-dropdown span.select2-results .select2-results__options,
+span.select2-container.select2-container--default.select2-container--open:not(.select2) span.select2-dropdown span.select2-results .select2-results__options {
+    max-height: calc(80vh - 33px);
+}
+
+span.select2-container.select2-container--default.select2-container--open:not(.select2-container--below, .select2-container--above, .select2-container--focus) span.select2-dropdown span.select2-results .select2-results__options>li,
+span.select2-container.select2-container--default.select2-container--open:not(.select2-container--below, .select2-container--above, .select2-container--focus) span.select2-dropdown span.select2-results .select2-results__options>li {
+}
+
+#grid_slide td.scGridBlockFont tr {
+    flex-wrap: nowrap;
+}
+
+#Salvar_grid td:first-child:not(.scAppDivHeaderText, .scGridLabelVert, .scGridPageLink),
+#Edit_grid td:first-child:not(.scAppDivHeaderText, .scGridLabelVert, .scGridPageLink) {
+    white-space: normal;
+    word-break: break-word;
+}
+
+#Salvar_grid td:first-child.scAppDivHeaderText, #Edit_grid td:first-child.scGridLabelVert,
+#Edit_grid td:first-child.scAppDivHeaderText, #Edit_grid td:first-child.scGridLabelVert {
+    white-space: nowrap;
+    word-break: normal;
+}
+
+#Salvar_grid *,
+#Edit_grid * {
+    white-space: normal;
+    word-break: normal;
+}
+
+#Salvar_grid #table_select_recup,
+#Edit_grid #table_select_recup {
+    table-layout: fixed;
+}
+
+#Salvar_grid #table_select_recup img,
+#Edit_grid #table_select_recup img {
+    display: none;
+}
+
+#Salvar_grid .scGridLabelVert,
+#Edit_grid .scGridLabelVert {
+    width: auto;
+    max-width: none;
+    min-width: none;
+}
+
+#grid_chart .scButton_default {
+    box-sizing: content-box !important;
+}
+
+
+div#ui-datepicker-div {
+    left: 50% !important;
+    width: 80vw !important;
+    transform: translateX(-50%);
+}
+
+div#ui-datepicker-div > * {
+    float: none !important;
+    width: auto !important;
+}
