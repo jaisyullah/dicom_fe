@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => '__root__',
+        'pretty_version' => 'dev-develop',
+        'version' => 'dev-develop',
+        'reference' => '03fa35151c1088c5f8a211081150e6593cffb7a4',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
+    ),
+    'versions' => array(
+        '__root__' => array(
+            'pretty_version' => 'dev-develop',
+            'version' => 'dev-develop',
+            'reference' => '03fa35151c1088c5f8a211081150e6593cffb7a4',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'braintree/braintree_php' => array(
+            'pretty_version' => '6.10.0',
+            'version' => '6.10.0.0',
+            'reference' => '27f27bc9402deb695335556751e15a7910025ca4',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../braintree/braintree_php',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'sonata-project/google-authenticator' => array(
+            'pretty_version' => '2.3.1',
+            'version' => '2.3.1.0',
+            'reference' => '71a4189228f93a9662574dc8c65e77ef55061b59',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../sonata-project/google-authenticator',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);
