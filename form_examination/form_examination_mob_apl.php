@@ -1916,8 +1916,8 @@ curl_setopt_array($curl, array(
     "reasonCode": [
         {
             "text": "Periksa rutin"
-        }
-    ]
+        }
+    ]
 }',
   CURLOPT_HTTPHEADER => array(
     'Content-Type: application/json'
@@ -1929,6 +1929,8 @@ $response = curl_exec($curl);
 curl_close($curl);
 
 $this->sc_ajax_message($response, "Response API");
+
+
 echo $response;
 
 
@@ -3826,9 +3828,6 @@ else
    {
        while (!$rs->EOF) 
        { 
-              $rs->fields[0] = str_replace(',', '.', $rs->fields[0]);
-              $rs->fields[0] = (strpos(strtolower($rs->fields[0]), "e")) ? (float)$rs->fields[0] : $rs->fields[0];
-              $rs->fields[0] = (string)$rs->fields[0];
               $aLookup[] = array(form_examination_mob_pack_protect_string(NM_charset_to_utf8($rs->fields[0])) => str_replace('<', '&lt;', form_examination_mob_pack_protect_string(NM_charset_to_utf8($rs->fields[1]))));
               $nmgp_def_dados .= $rs->fields[1] . "?#?" ; 
               $nmgp_def_dados .= $rs->fields[0] . "?#?N?@?" ; 
@@ -5708,9 +5707,6 @@ else
    {
        while (!$rs->EOF) 
        { 
-              $rs->fields[0] = str_replace(',', '.', $rs->fields[0]);
-              $rs->fields[0] = (strpos(strtolower($rs->fields[0]), "e")) ? (float)$rs->fields[0] : $rs->fields[0];
-              $rs->fields[0] = (string)$rs->fields[0];
               $nmgp_def_dados .= $rs->fields[1] . "?#?" ; 
               $nmgp_def_dados .= $rs->fields[0] . "?#?N?@?" ; 
               $_SESSION['sc_session'][$this->Ini->sc_page]['form_examination_mob']['Lookup_dpjp'][] = $rs->fields[0];

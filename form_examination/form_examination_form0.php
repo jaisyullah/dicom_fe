@@ -1787,9 +1787,6 @@ else
    {
        while (!$rs->EOF) 
        { 
-              $rs->fields[0] = str_replace(',', '.', $rs->fields[0]);
-              $rs->fields[0] = (strpos(strtolower($rs->fields[0]), "e")) ? (float)$rs->fields[0] : $rs->fields[0];
-              $rs->fields[0] = (string)$rs->fields[0];
               $nmgp_def_dados .= $rs->fields[1] . "?#?" ; 
               $nmgp_def_dados .= $rs->fields[0] . "?#?N?@?" ; 
               $_SESSION['sc_session'][$this->Ini->sc_page]['form_examination']['Lookup_dpjp'][] = $rs->fields[0];
