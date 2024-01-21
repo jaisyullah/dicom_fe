@@ -1,6 +1,29 @@
 <?php
 
-function nm_get_api_gateways($api = '')
+function nm_get_api_gateways($api = '') {
+    $arr_all = nm_get_api_gateways_deep($api);
+    $flatten = [];
+    foreach($arr_all as $scope => $scope_data) {
+        if (!isset($flatten[$scope])) {
+            $flatten[$scope] = [];
+        }
+        foreach ($scope_data as $field => $field_data) {
+            $k_f =  strval($field);
+            if (!isset($flatten[$scope][$k_f])) {
+                $flatten[$scope][$k_f] = [];
+            }
+            $field_flat = [];
+            foreach ($field_data as $cols) {
+                foreach ($cols as $key => $val) {
+                    $field_flat[$key] = $val;
+                }
+            }
+            $flatten[$scope][$k_f] = $field_flat;
+        }
+    }
+    return $flatten;
+}
+function nm_get_api_gateways_deep($api = '')
 {
     $arr_apis = ['email' => [], 'sms' => [], 'payment' => []];
 
@@ -27,99 +50,155 @@ function nm_get_api_gateways($api = '')
         'sa-east-1' => 'América do Sul (São Paulo)',
     ];
     $arr_apis['email']['smtp'] = [
-        'smtp_server' => ['placeholder' => 'smtp.example.com'],
-        'smtp_port' => ['placeholder' => '465', 'type' => 'number'],
-        'smtp_user' => ['placeholder' => 'default@example.com'],
-        'smtp_password' => ['placeholder' => '********', 'type' => 'password'],
-        'smtp_protocol' => ['options' => ['', 'SSL', 'TLS'], 'type' => 'select'],
-        'from_email' => ['placeholder' => 'default@example.com'],
-        'from_name' => ['placeholder' => 'default'],
+        [
+            'smtp_server' => ['placeholder' => 'smtp.example.com'],
+            'smtp_port' => ['placeholder' => '465', 'type' => 'number'],
+            'smtp_protocol' => ['options' => ['', 'SSL', 'TLS'], 'type' => 'select']
+        ],
+        [
+            'smtp_user' => ['placeholder' => 'default@example.com'],
+            'smtp_password' => ['placeholder' => '********', 'type' => 'password']
+        ],
+        [
+            'from_email' => ['placeholder' => 'default@example.com'],
+            'from_name' => ['placeholder' => 'default']
+        ],
     ];
 
 
     $arr_apis['email']['mandrill'] = [
-        'api_key' => ['placeholder' => 'Your API'],
-        'from_email' => ['placeholder' => 'default@example.com'],
-        'from_name' => ['placeholder' => 'default'],
+        [
+            'from_email' => ['placeholder' => 'default@example.com'],
+            'from_name' => ['placeholder' => 'default'],
+        ],
+        [
+            'api_key' => ['placeholder' => 'Your API']
+        ]
     ];
 
 
     $arr_apis['email']['SES'] = [
-        'api_key' => ['placeholder' => 'Your Key API'],
-        'api_secret' => ['placeholder' => 'Your Secret API'],
-        'region' => ['type' => 'select', 'options' => $aws_region, 'use_key' => true, 'use_lang' => true],
-        'from_email' => ['placeholder' => 'default@example.com'],
-        'from_name' => ['placeholder' => 'default'],
+        [
+            'api_key' => ['placeholder' => 'Your Key API'],
+            'api_secret' => ['placeholder' => 'Your Secret API'],
+        ],
+        [
+            'from_email' => ['placeholder' => 'default@example.com'],
+            'from_name' => ['placeholder' => 'default'],
+        ],
+        [
+            'region' => ['type' => 'select', 'options' => $aws_region, 'use_key' => true, 'use_lang' => true],
+        ]
     ];
 
 
     $arr_apis['sms']['twilio'] = [
-        'auth_id' => ['placeholder' => 'Your Auth ID'],
-        'auth_token' => ['placeholder' => 'Your Auth Token'],
-        'from' => ['placeholder' => 'Default number to send SMS'],
+        [
+            'auth_id' => ['placeholder' => 'Your Auth ID'],
+            'auth_token' => ['placeholder' => 'Your Auth Token'],
+        ],
+        [
+            'from' => ['placeholder' => 'Default number to send SMS'],
+        ]
     ];
 
     $arr_apis['sms']['plivo'] = [
-        'auth_id' => ['placeholder' => 'Your Auth ID'],
-        'auth_token' => ['placeholder' => 'Your Auth Token'],
-        'from' => ['placeholder' => 'Default number to send SMS'],
+        [
+            'auth_id' => ['placeholder' => 'Your Auth ID'],
+            'auth_token' => ['placeholder' => 'Your Auth Token'],
+        ],
+        [
+            'from' => ['placeholder' => 'Default number to send SMS'],
+        ]
     ];
 
     $arr_apis['sms']['clickatell'] = [
-        'auth_token' => ['placeholder' => 'Your Auth Token'],
+        [
+            'auth_token' => ['placeholder' => 'Your Auth Token'],
+        ]
     ];
 
     $arr_apis['payment']['pagseguro'] = [
-        'environment' => ['placeholder' => 'Sandbox or Production'],
-        'auth_email' => ['placeholder' => 'Email to auth in API'],
-        'auth_token' => ['placeholder' => 'Your Auth token'],
-        'charset' => ['options' => ['UTF-8', 'ISO-8859-1'], 'type' => 'select'],
-        'auth_appId' => ['placeholder' => 'AppID to connect in pagseguro by app'],
-        'auth_appKey' => ['placeholder' => 'AppKey to connect in pagseguro by app'],
+        [
+            'environment' => ['placeholder' => 'Sandbox or Production'],
+            'charset' => ['options' => ['UTF-8', 'ISO-8859-1'], 'type' => 'select'],
+        ],
+        [
+            'auth_email' => ['placeholder' => 'Email to auth in API'],
+            'auth_token' => ['placeholder' => 'Your Auth token'],
+        ],
+        [
+            'auth_appId' => ['placeholder' => 'AppID to connect in pagseguro by app'],
+            'auth_appKey' => ['placeholder' => 'AppKey to connect in pagseguro by app'],
+        ]
     ];
 
     $arr_apis['payment']['paypal_express'] = [
-        'username' => ['placeholder' => 'Username'],
-        'password' => ['placeholder' => 'Password'],
-        'signature' => ['placeholder' => 'Signature'],
-        'testMode' => ['options' => ['FALSE', 'TRUE'], 'type' => 'select'],
+        [
+            'username' => ['placeholder' => 'Username'],
+            'password' => ['placeholder' => 'Password'],
+        ],
+        [
+            'signature' => ['placeholder' => 'Signature'],
+            'testMode' => ['options' => ['FALSE', 'TRUE'], 'type' => 'select'],
+        ]
     ];
 
     $arr_apis['payment']['paypal_express_incontext'] = [
-        'username' => ['placeholder' => 'Username'],
-        'password' => ['placeholder' => 'Password'],
-        'signature' => ['placeholder' => 'Signature'],
-        'testMode' => ['options' => ['FALSE', 'TRUE'], 'type' => 'select'],
+        [
+            'username' => ['placeholder' => 'Username'],
+            'password' => ['placeholder' => 'Password'],
+        ],
+        [
+            'signature' => ['placeholder' => 'Signature'],
+            'testMode' => ['options' => ['FALSE', 'TRUE'], 'type' => 'select'],
+        ]
     ];
 
     $arr_apis['payment']['paypal_pro'] = [
-        'username' => ['placeholder' => 'Username'],
-        'password' => ['placeholder' => 'Password'],
-        'signature' => ['placeholder' => 'Signature'],
-        'testMode' => ['options' => ['FALSE', 'TRUE'], 'type' => 'select'],
+        [
+            'username' => ['placeholder' => 'Username'],
+            'password' => ['placeholder' => 'Password'],
+        ],
+        [
+            'signature' => ['placeholder' => 'Signature'],
+            'testMode' => ['options' => ['FALSE', 'TRUE'], 'type' => 'select'],
+        ]
     ];
 
     $arr_apis['payment']['paypal_rest'] = [
-        'clientId' => ['placeholder' => 'Your Auth ClientId'],
-        'secret' => ['placeholder' => 'Your Auth Secret'],
-        'token' => ['placeholder' => 'Your Auth token'],
-        'testMode' => ['options' => ['FALSE', 'TRUE'], 'type' => 'select'],
+        [
+            'clientId' => ['placeholder' => 'Your Auth ClientId'],
+            'secret' => ['placeholder' => 'Your Auth Secret'],
+        ],
+        [
+            'token' => ['placeholder' => 'Your Auth token'],
+            'testMode' => ['options' => ['FALSE', 'TRUE'], 'type' => 'select'],
+        ]
     ];
     if(PHP_MAJOR_VERSION >7 || (PHP_MAJOR_VERSION ==7 && PHP_MINOR_VERSION >= 3) ) {
         $arr_apis['payment']['braintree'] = [
-            'merchantId' => ['placeholder' => 'Your merchantId'],
-            'publicKey' => ['placeholder' => 'Your publicKey'],
-            'privateKey' => ['placeholder' => 'Your privateKey'],
-            'testMode' => ['options' => ['FALSE', 'TRUE'], 'type' => 'select'],
+            [
+                'privateKey' => ['placeholder' => 'Your privateKey'],
+                'publicKey' => ['placeholder' => 'Your publicKey'],
+            ],
+            [
+                'merchantId' => ['placeholder' => 'Your merchantId'],
+                'testMode' => ['options' => ['FALSE', 'TRUE'], 'type' => 'select'],
+            ]
         ];
 
 
         $arr_apis['payment']['mercadopago'] = [
-            'token' => ['placeholder' => 'Your Auth token'],
+            [
+                'token' => ['placeholder' => 'Your Auth token'],
+            ]
         ];
     }
     $arr_apis['payment']['stripe'] = [
-        'apiKey' => ['placeholder' => 'Your apiKey'],
+        [
+            'apiKey' => ['placeholder' => 'Your apiKey'],
+        ]
     ];
     /*
             $arr_apis['whatsapp']['waboxapp'] = [
@@ -127,27 +206,37 @@ function nm_get_api_gateways($api = '')
                 'uid' => ['placeholder' => 'Your UID'],
                 'testMode' => ['options' => ['FALSE','TRUE'], 'type' => 'select'],
             ];*/
-
-    $arr_apis['whatsapp']['chatapi'] = [
-        'url' => ['placeholder' => 'Your Url'],
-        'token' => ['placeholder' => 'Your token'],
-    ];
+    /*
+        $arr_apis['whatsapp']['chatapi'] = [
+            'url' => ['placeholder' => 'Your Url'],
+            'token' => ['placeholder' => 'Your token'],
+        ];*/
 
     $arr_apis['storage']['S3'] = [
-        'api_key' => ['placeholder' => 'Your Key API'],
-        'api_secret' => ['placeholder' => 'Your Secret API'],
-        'region' => ['type' => 'select', 'options' => $aws_region, 'use_key' => true, 'use_lang' => true],
-        'bucket' => ['placeholder' => 'Your Bucket'],
+        [
+            'api_key' => ['placeholder' => 'Your Key API'],
+            'api_secret' => ['placeholder' => 'Your Secret API'],
+        ],
+        [
+            'region' => ['type' => 'select', 'options' => $aws_region, 'use_key' => true, 'use_lang' => true],
+            'bucket' => ['placeholder' => 'Your Bucket'],
+        ]
     ];
     $arr_apis['storage']['dropbox'] = [
-        "api_key" => ['placeholder' => 'Your App Key'],
-        "api_secret" => ['placeholder' => 'Your App Secret'],
-        "access_token" => ['placeholder' => 'Your Access Token'],
+        [
+            "api_key" => ['placeholder' => 'Your App Key'],
+            "api_secret" => ['placeholder' => 'Your App Secret'],
+            "access_token" => ['placeholder' => 'Your Access Token'],
+        ]
     ];
     $arr_apis['storage']['google_drive'] = [
-        "app_name" => ['placeholder' => 'Your App Name'],
-        "json_oauth" => ['placeholder' => 'Your Json Oauth', 'type' => 'textarea'],
-        "auth_code" => ['placeholder' => 'Click in button and insert Auth Code generated', 'type' => 'gd_auth_code'],
+        [
+            "app_name" => ['placeholder' => 'Your App Name'],
+            "auth_code" => ['placeholder' => 'Click in button and insert Auth Code generated', 'type' => 'gd_auth_code'],
+        ],
+        [
+            "json_oauth" => ['placeholder' => 'Your Json Oauth', 'type' => 'textarea'],
+        ]
     ];
     /*
     $arr_apis['storage']['onedrive'] = [
@@ -156,14 +245,20 @@ function nm_get_api_gateways($api = '')
         "auth_code" => ['placeholder' => 'Click in button and insert Auth Code generated', 'type' => 'od_auth_code'],
     ];*/
     $arr_apis['auth']['google_authenticator'] = [
-       // 'salt' => ['placeholder' => 'Salt'],
-        'domain' => ['placeholder' => 'Domain'],
+        [
+            // 'salt' => ['placeholder' => 'Salt'],
+            'domain' => ['placeholder' => 'Domain'],
+        ]
     ];
 
     $arr_apis['reporting']['google_sheets'] = [
-        "app_name" => ['placeholder' => 'Your App Name'],
-        "json_oauth" => ['placeholder' => 'Your Json Oauth', 'type' => 'textarea'],
-        "auth_code" => ['placeholder' => 'Click in button and insert Auth Code generated', 'type' => 'gd_auth_code'],
+        [
+            "app_name" => ['placeholder' => 'Your App Name'],
+            "auth_code" => ['placeholder' => 'Click in button and insert Auth Code generated', 'type' => 'gd_auth_code'],
+        ],
+        [
+            "json_oauth" => ['placeholder' => 'Your Json Oauth', 'type' => 'textarea'],
+        ]
     ];
 
     if (!empty($api))
@@ -395,13 +490,13 @@ function sc_call_api($profile, $arr_settings = [])
         case 'waboxapp':
             break;
         case 'chatapi':
-            include_once($prod_path . "/third/chatapi/autoload.php");
+            /* include_once($prod_path . "/third/chatapi/autoload.php");
 
-            $instance = chatapi\WhatsApp\Client::getInstance([
-                'url' => trim($arr_settings['settings']['url']),
-                'token' => $arr_settings['settings']['token']
-            ]);
-            return $instance;
+             $instance = chatapi\WhatsApp\Client::getInstance([
+                 'url' => trim($arr_settings['settings']['url']),
+                 'token' => $arr_settings['settings']['token']
+             ]);
+             return $instance;*/
         case 's3':
             include_once($prod_path . "/third/aws.phar");
 
@@ -463,18 +558,18 @@ function sc_call_api($profile, $arr_settings = [])
             break;
         case 'onedrive':
 
-                $client = api_onedrive_get_client($profile, $arr_settings['settings']['api_key'], $arr_settings['settings']['api_secret'],
-                    isset($arr_settings['settings']['auth_code']) ? $arr_settings['settings']['auth_code'] : '',
-                    isset($arr_settings['settings']['token_code']) ? $arr_settings['settings']['token_code'] : '',
-                    isset($arr_settings['settings']['return_token']) ? $arr_settings['settings']['return_token'] : false);
-                return $client;
+            $client = api_onedrive_get_client($profile, $arr_settings['settings']['api_key'], $arr_settings['settings']['api_secret'],
+                isset($arr_settings['settings']['auth_code']) ? $arr_settings['settings']['auth_code'] : '',
+                isset($arr_settings['settings']['token_code']) ? $arr_settings['settings']['token_code'] : '',
+                isset($arr_settings['settings']['return_token']) ? $arr_settings['settings']['return_token'] : false);
+            return $client;
 
             break;
         case 'google_authenticator':
-                require_once $prod_path . '/vendor/autoload.php';
-                $client = new GoogleAuthenticator();
+            require_once $prod_path . '/vendor/autoload.php';
+            $client = new GoogleAuthenticator();
 
-                return [ $client, $arr_settings['settings'] ];
+            return [ $client, $arr_settings['settings'] ];
 
             break;
 
@@ -513,11 +608,11 @@ function api_google_get_client($profile, $app_name, $json_oauth, $auth_code = ''
         } else {
             $url = explode('/prod/lib/php/nm_ini_manager2.php', $_SERVER['HTTP_REFERER'])[0];
         }
-        $url .= "/prod/third/oauth/google-api-php-client-2.1.3/code.php";
+        $url .= "/prod/third/oauth/google-api-php-client/code.php";
         $json_oauth = strtr($json_oauth, ["http://localhost" => $url]);
     }
     file_put_contents($json_file, $json_oauth);
-    include_once($prod_path . "/third/oauth/google-api-php-client-2.1.3/vendor/autoload.php");
+    include_once($prod_path . "/third/oauth/google-api-php-client/vendor/autoload.php");
     $client = new Google_Client();
     $client->setApplicationName($app_name);
     $client->setRedirectUri("https://scriptcase.net/scriptcase-api/");
@@ -675,6 +770,7 @@ function sc_send_sms($arr_settings)
 
 function sc_send_whatsapp($arr_settings)
 {
+    return;
     if (isset($arr_settings['profile']) && !empty($arr_settings['profile'])) {
         $instance = sc_call_api($arr_settings['profile']);
         if ($instance == false) {
@@ -865,9 +961,9 @@ function sc_send_mail_api($arr_settings)
                         $arr_mail['to'] = array();
                         foreach($_tmp as $__mail) {
                             $arr_mail['to'][] =  [
-                                                    'email' => $__mail,
-                                                    'type' => 'to'
-                                                 ];
+                                'email' => $__mail,
+                                'type' => 'to'
+                            ];
                         }
                     }else {
                         $arr_mail['to'] = [['email' => $arr_mail['to'], 'type' => 'to']];

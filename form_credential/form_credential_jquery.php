@@ -58,28 +58,28 @@ function scEventControl_init(iSeqRow) {
 }
 
 function scEventControl_active(iSeqRow) {
-  if (scEventControl_data["id" + iSeqRow]["blur"]) {
+  if (scEventControl_data["id" + iSeqRow] && scEventControl_data["id" + iSeqRow]["blur"]) {
     return true;
   }
-  if (scEventControl_data["id" + iSeqRow]["change"]) {
+  if (scEventControl_data["id" + iSeqRow] && scEventControl_data["id" + iSeqRow]["change"]) {
     return true;
   }
-  if (scEventControl_data["client_id" + iSeqRow]["blur"]) {
+  if (scEventControl_data["client_id" + iSeqRow] && scEventControl_data["client_id" + iSeqRow]["blur"]) {
     return true;
   }
-  if (scEventControl_data["client_id" + iSeqRow]["change"]) {
+  if (scEventControl_data["client_id" + iSeqRow] && scEventControl_data["client_id" + iSeqRow]["change"]) {
     return true;
   }
-  if (scEventControl_data["client_secret" + iSeqRow]["blur"]) {
+  if (scEventControl_data["client_secret" + iSeqRow] && scEventControl_data["client_secret" + iSeqRow]["blur"]) {
     return true;
   }
-  if (scEventControl_data["client_secret" + iSeqRow]["change"]) {
+  if (scEventControl_data["client_secret" + iSeqRow] && scEventControl_data["client_secret" + iSeqRow]["change"]) {
     return true;
   }
-  if (scEventControl_data["organization_id" + iSeqRow]["blur"]) {
+  if (scEventControl_data["organization_id" + iSeqRow] && scEventControl_data["organization_id" + iSeqRow]["blur"]) {
     return true;
   }
-  if (scEventControl_data["organization_id" + iSeqRow]["change"]) {
+  if (scEventControl_data["organization_id" + iSeqRow] && scEventControl_data["organization_id" + iSeqRow]["change"]) {
     return true;
   }
   return false;

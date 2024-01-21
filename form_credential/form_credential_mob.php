@@ -291,8 +291,8 @@ class form_credential_mob_ini
       $this->nm_dt_criacao   = "20231101"; 
       $this->nm_hr_criacao   = "195106"; 
       $this->nm_autor_alt    = "admin"; 
-      $this->nm_dt_ult_alt   = "20231126"; 
-      $this->nm_hr_ult_alt   = "193725"; 
+      $this->nm_dt_ult_alt   = "20240121"; 
+      $this->nm_hr_ult_alt   = "104057"; 
       list($NM_usec, $NM_sec) = explode(" ", microtime()); 
       $this->nm_timestamp    = (float) $NM_sec; 
       $this->nm_app_version  = "1.0.0"; 
@@ -671,139 +671,254 @@ class form_credential_mob_ini
       }
       if (!is_dir($this->root . $this->path_prod))
       {
-          echo "<style type=\"text/css\">";
-          echo ".scButton_cancel { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#C02A21; border-style:solid; border-radius:30px; background-color:#C02A21; filter: alpha(opacity=100); opacity:1; padding:3px 13px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_cancel:hover { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#C02A21; border-style:solid; border-radius:30px; background-color:#C02A21; filter: alpha(opacity=74); opacity:0.74; padding:3px 13px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_cancel:active { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#C02A21; border-style:solid; border-radius:30px; background-color:#C02A21; filter: alpha(opacity=83); opacity:0.83; padding:3px 13px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_cancel_disabled { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#C02A21; border-style:solid; border-radius:30px; background-color:#C02A21; filter: alpha(opacity=33); opacity:0.33; padding:3px 13px; cursor:default; transition:all 0.2s;  }";
-          echo ".scButton_cancel_selected { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#C02A21; border-style:solid; border-radius:30px; background-color:#C02A21; filter: alpha(opacity=100); opacity:1; padding:3px 13px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_cancel_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_cancel_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_check { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=100); opacity:1; padding:3px 13px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_check:hover { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=77); opacity:0.77; padding:3px 13px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_check:active { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=78); opacity:0.78; padding:3px 13px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_check_disabled { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=33); opacity:0.33; padding:3px 13px; cursor:default;  }";
-          echo ".scButton_check_selected { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=79); opacity:0.79; padding:3px 13px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_check_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_check_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_danger { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#C02A21; border-style:solid; border-radius:30px; background-color:#C02A21; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_danger:hover { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#C02A21; border-style:solid; border-radius:30px; background-color:#C02A21; filter: alpha(opacity=80); opacity:0.8; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_danger:active { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#C02A21; border-style:solid; border-radius:30px; background-color:#C02A21; filter: alpha(opacity=82); opacity:0.82; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_danger_disabled { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#C02A21; border-style:solid; border-radius:30px; background-color:#C02A21; filter: alpha(opacity=34); opacity:0.34; padding:9px 12px; cursor:default; transition:all 0.2s;  }";
-          echo ".scButton_danger_selected { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#C02A21; border-style:solid; border-radius:30px; background-color:#C02A21; filter: alpha(opacity=85); opacity:0.85; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_danger_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_danger_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_default { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#247159; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#EBF2F0; border-style:solid; border-radius:30px; background-color:#EBF2F0; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_default:hover { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#528978; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_default:active { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#528978; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_default_disabled { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#1B211F; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#EBF2F0; border-style:solid; border-radius:30px; background-color:#EBF2F0; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=44); opacity:0.44; padding:9px 12px; cursor:default; transition:all 0.2s;  }";
-          echo ".scButton_default_selected { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#528978; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_default_list { background-color:#ffffff; filter: alpha(opacity=100); opacity:1; padding:6px 52px 6px 15px; cursor:pointer; font-family:Arial, sans-serif; font-size:13px; text-decoration:none; color:#3C4858;  }";
-          echo ".scButton_default_list:hover { background-color:#EFF2F7; filter: alpha(opacity=100); opacity:1; padding:6px 52px 6px 15px; cursor:pointer; font-family:Arial, sans-serif; font-size:13px; text-decoration:none; color:#3C4858;  }";
-          echo ".scButton_default_list_disabled { background-color:#ffffff; font-family:Arial, sans-serif; font-size:13px; text-decoration:none; color:#3C4858; padding:6px 52px 6px 15px; filter: alpha(opacity=45); opacity:0.45; cursor:default;  }";
-          echo ".scButton_default_list_selected { background-color:#ffffff; font-family:Arial, sans-serif; font-size:13px; text-decoration:none; color:#3C4858; padding:6px 52px 6px 15px; cursor:pointer; filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_default_list:active { background-color:#EFF2F7; filter: alpha(opacity=100); opacity:1; padding:6px 52px 6px 15px; cursor:pointer; font-family:Arial, sans-serif; font-size:13px; text-decoration:none; color:#3C4858;  }";
-          echo ".scButton_facebook { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#3b5998; border-style:solid; border-radius:30px; background-color:#3b5998; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_facebook:hover { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#304d8a; border-style:solid; border-radius:30px; background-color:#304d8a; box-shadow:inset 0 -1px 0 rgba(31, 45, 61, 0.15); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_facebook:active { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#2d4373; border-style:solid; border-radius:30px; background-color:#2d4373; box-shadow:inset 0 -1px 0 rgba(31, 45, 61, 0.15); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_facebook_disabled { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#3b5998; border-style:solid; border-radius:30px; background-color:#3b5998; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=44); opacity:0.44; padding:9px 12px; cursor:default; transition:all 0.2s;  }";
-          echo ".scButton_facebook_selected { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:#3b5998; border-color:#3b5998; border-style:solid; border-radius:30px; background-color:#3b5998; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_facebook_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_facebook_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_fontawesome { color:#247159; font-size:15px; text-decoration:none; border-style:none; filter: alpha(opacity=100); opacity:1; padding:5px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_fontawesome:hover { color:#247159; font-size:15px; text-decoration:none; border-style:none; filter: alpha(opacity=100); opacity:1; padding:5px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_fontawesome:active { color:#247159; font-size:15px; text-decoration:none; filter: alpha(opacity=100); opacity:1; padding:5px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_fontawesome_disabled { color:#247159; font-size:15px; text-decoration:none; border-style:none; filter: alpha(opacity=44); opacity:0.44; padding:5px; cursor:default; transition:all 0.2s;  }";
-          echo ".scButton_fontawesome_selected { color:#247159; font-size:15px; text-decoration:none; border-style:none; filter: alpha(opacity=100); opacity:1; padding:5px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_fontawesome_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_fontawesome_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_fontawesome_light { color:#247159; font-size:15px; text-decoration:none; border-style:none; filter: alpha(opacity=100); opacity:1; padding:5px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_fontawesome_light:hover { color:#247159; font-size:15px; text-decoration:none; border-style:none; filter: alpha(opacity=100); opacity:1; padding:5px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_fontawesome_light:active { color:#247159; font-size:15px; text-decoration:none; filter: alpha(opacity=100); opacity:1; padding:5px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_fontawesome_light_disabled { color:#247159; font-size:15px; text-decoration:none; border-style:none; filter: alpha(opacity=44); opacity:0.44; padding:5px; cursor:default; transition:all 0.2s;  }";
-          echo ".scButton_fontawesome_light_selected { color:#247159; font-size:15px; text-decoration:none; border-style:none; filter: alpha(opacity=100); opacity:1; padding:5px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_fontawesome_light_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_fontawesome_light_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_google { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#dd4b39; border-style:solid; border-radius:30px; background-color:#dd4b39; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_google:hover { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#e0321c; border-style:solid; border-radius:30px; background-color:#e0321c; box-shadow:inset 0 -1px 0 rgba(31, 45, 61, 0.15); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_google:active { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#c23321; border-style:solid; border-radius:30px; background-color:#c23321; box-shadow:inset 0 -1px 0 rgba(31, 45, 61, 0.15); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_google_disabled { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#dd4b39; border-style:solid; border-radius:30px; background-color:#dd4b39; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=44); opacity:0.44; padding:9px 12px; cursor:default; transition:all 0.2s;  }";
-          echo ".scButton_google_selected { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#dd4b39; border-style:solid; border-radius:30px; background-color:#dd4b39; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_google_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_google_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_icons { color:#247159; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#EBF2F0; border-style:solid; border-radius:30px; background-color:#EBF2F0; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_icons:hover { color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_icons:active { color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_icons_disabled { color:#1B211F; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#EBF2F0; border-style:solid; border-radius:30px; background-color:#EBF2F0; filter: alpha(opacity=44); opacity:0.44; padding:9px 12px; cursor:default; transition:all 0.2s;  }";
-          echo ".scButton_icons_selected { color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_icons_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_icons_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_ok { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_ok:hover { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=81); opacity:0.81; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_ok:active { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=77); opacity:0.77; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_ok_disabled { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=33); opacity:0.33; padding:9px 12px; cursor:default; transition:all 0.2s;  }";
-          echo ".scButton_ok_selected { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=78); opacity:0.78; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_ok_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_ok_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_paypal { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#2185d0; border-style:solid; border-radius:30px; background-color:#2185d0; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_paypal:hover { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#1678c2; border-style:solid; border-radius:30px; background-color:#1678c2; box-shadow:inset 0 -1px 0 rgba(31, 45, 61, 0.15); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_paypal:active { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#1a69a4; border-style:solid; border-radius:30px; background-color:#1a69a4; box-shadow:inset 0 -1px 0 rgba(31, 45, 61, 0.15); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_paypal_disabled { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#2185d0; border-style:solid; border-radius:30px; background-color:#2185d0; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=44); opacity:0.44; padding:9px 12px; cursor:default; transition:all 0.2s;  }";
-          echo ".scButton_paypal_selected { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#2185d0; border-style:solid; border-radius:30px; background-color:#2185d0; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_paypal_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_paypal_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_sc_image {  }";
-          echo ".scButton_sc_image:hover {  }";
-          echo ".scButton_sc_image:active {  }";
-          echo ".scButton_sc_image_disabled {  }";
-          echo ".scButton_small { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#247159; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#EBF2F0; border-style:solid; border-radius:30px; background-color:#EBF2F0; filter: alpha(opacity=100); opacity:1; padding:3px 13px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_small:hover { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=100); opacity:1; padding:3px 13px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_small:active { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=100); opacity:1; padding:3px 13px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_small_disabled { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#1B211F; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#EBF2F0; border-style:solid; border-radius:30px; background-color:#EBF2F0; filter: alpha(opacity=50); opacity:0.5; padding:3px 13px; cursor:default;  }";
-          echo ".scButton_small_selected { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=100); opacity:1; padding:3px 13px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_small_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_small_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_sweetalertcancel { font-family:Arial, sans-serif; color:#fff; font-size:17px; font-weight:normal; text-decoration:none; border-width:0px; border-color:#aaa; border-style:solid; border-radius:30px; background-color:#aaa; box-shadow:none; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_sweetalertcancel:hover { font-family:Arial, sans-serif; color:#fff; font-size:17px; font-weight:normal; text-decoration:none; border-width:0px; border-color:#999; border-style:solid; border-radius:30px; background-color:#999; box-shadow:none; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_sweetalertcancel:active { font-family:Arial, sans-serif; color:#fff; font-size:17px; font-weight:normal; text-decoration:none; border-width:0px; border-color:#3085d6; border-style:solid; border-radius:30px; background-color:#3085d6; box-shadow:none; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_sweetalertcancel_disabled { font-family:Arial, sans-serif; color:#fff; font-size:17px; font-weight:normal; text-decoration:none; border-width:0px; border-color:#aaa; border-style:solid; border-radius:30px; background-color:#aaa; box-shadow:none; filter: alpha(opacity=44); opacity:0.44; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_sweetalertcancel_selected { font-family:Arial, sans-serif; color:#fff; font-size:17px; font-weight:normal; text-decoration:none; border-width:0px; border-color:#7a7a7a; border-style:solid; border-radius:30px; background-color:#7a7a7a; box-shadow:none; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_sweetalertcancel_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_sweetalertcancel_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_sweetalertok { font-family:Arial, sans-serif; color:#fff; font-size:17px; font-weight:normal; text-decoration:none; border-width:0px; border-color:#3085d6; border-style:solid; border-radius:30px; background-color:#3085d6; box-shadow:none; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_sweetalertok:hover { font-family:Arial, sans-serif; color:#fff; font-size:17px; font-weight:normal; text-decoration:none; border-width:0px; border-color:#2b77c0; border-style:solid; border-radius:30px; background-color:#2b77c0; box-shadow:none; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_sweetalertok:active { font-family:Arial, sans-serif; color:#fff; font-size:17px; font-weight:normal; text-decoration:none; border-width:0px; border-color:#266aab; border-style:solid; border-radius:30px; background-color:#266aab; box-shadow:none; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_sweetalertok_disabled { font-family:Arial, sans-serif; color:#fff; font-size:17px; font-weight:normal; text-decoration:none; border-width:0px; border-color:#3085d6; border-style:solid; border-radius:30px; background-color:#3085d6; box-shadow:none; filter: alpha(opacity=44); opacity:0.44; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_sweetalertok_selected { font-family:Arial, sans-serif; color:#fff; font-size:17px; font-weight:normal; text-decoration:none; border-width:0px; border-color:#266aab; border-style:solid; border-radius:30px; background-color:#266aab; box-shadow:none; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_sweetalertok_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_sweetalertok_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_twitter { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#55acee; border-style:solid; border-radius:30px; background-color:#55acee; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_twitter:hover { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#35a2f4; border-style:solid; border-radius:30px; background-color:#35a2f4; box-shadow:inset 0 -1px 0 rgba(31, 45, 61, 0.15); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_twitter:active { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#2795e9; border-style:solid; border-radius:30px; background-color:#2795e9; box-shadow:inset 0 -1px 0 rgba(31, 45, 61, 0.15); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_twitter_disabled { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#55acee; border-style:solid; border-radius:30px; background-color:#55acee; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=44); opacity:0.44; padding:9px 12px; cursor:default; transition:all 0.2s;  }";
-          echo ".scButton_twitter_selected { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#55acee; border-style:solid; border-radius:30px; background-color:#55acee; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_twitter_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_twitter_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_youtube { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:red; border-style:solid; border-radius:30px; background-color:red; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_youtube:hover { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#e60000; border-style:solid; border-radius:30px; background-color:#e60000; box-shadow:inset 0 -1px 0 rgba(31, 45, 61, 0.15); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_youtube:active { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#c00; border-style:solid; border-radius:30px; background-color:#c00; box-shadow:inset 0 -1px 0 rgba(31, 45, 61, 0.15); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_youtube_disabled { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:red; border-style:solid; border-radius:30px; background-color:red; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=44); opacity:0.44; padding:9px 12px; cursor:default; transition:all 0.2s;  }";
-          echo ".scButton_youtube_selected { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:red; border-style:solid; border-radius:30px; background-color:red; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_youtube_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_youtube_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scLink_default { text-decoration: underline; font-size: 13px; color: #1a0dab;  }";
-          echo ".scLink_default:visited { text-decoration: underline; font-size: 13px; color: #660099;  }";
-          echo ".scLink_default:active { text-decoration: underline; font-size: 13px; color: #1a0dab;  }";
-          echo ".scLink_default:hover { text-decoration: underline; font-size: 13px; color: #1a0dab;  }";
-          echo "</style>";
-          echo "<table width=\"80%\" border=\"1\" height=\"117\">";
-          echo "<tr>";
-          echo "   <td bgcolor=\"\">";
-          echo "       <b><font size=\"4\">" . $this->Nm_lang['lang_errm_cmlb_nfnd'] . "</font>";
-          echo "  " . $this->root . $this->path_prod;
-          echo "   </b></td>";
-          echo " </tr>";
-          echo "</table>";
+          $str_message = "<html>
+
+<head>
+    <title>{var_str_title}</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            overflow-x: hidden;
+            min-width: 320px;
+            background: #FFFFFF;
+            font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            line-height: 1.4285em;
+            color: rgba(0, 0, 0, 0.87);
+            font-smoothing: antialiased;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        user agent stylesheet body {
+            display: block;
+            margin: 8px;
+        }
+
+        html {
+            font-size: 14px;
+        }
+
+        html {
+            line-height: 1.15;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        ::selection {
+            background-color: #CCE2FF;
+            color: rgba(0, 0, 0, 0.87);
+        }
+
+        .ui.container {
+            width: 933px;
+            min-width: 992px;
+            max-width: 1199px;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        .ui.container {
+            display: block;
+            max-width: 100% !important;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        .ui.message:last-child {
+            margin-bottom: 0em;
+        }
+
+        .ui.message:first-child {
+            margin-top: 0em;
+        }
+
+        .ui.message {
+            font-size: 1em;
+        }
+
+        .ui.message {
+            position: relative;
+            min-height: 1em;
+            margin: 1em 0em;
+            background: #F8F8F9;
+            padding: 1em 1.5em;
+            line-height: 1.4285em;
+            color: rgba(0, 0, 0, 0.87);
+            transition: opacity 0.1s ease, color 0.1s ease, background 0.1s ease, box-shadow 0.1s ease;
+            border-radius: 0.28571429rem;
+            box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.22) inset, 0px 0px 0px 0px rgba(0, 0, 0, 0);
+        }
+
+        article,
+        aside,
+        footer,
+        header,
+        nav,
+        section {
+            display: block;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        .ui.message> :last-child {
+            margin-bottom: 0em;
+        }
+
+        .ui.message> :first-child {
+            margin-top: 0em;
+        }
+
+        .ui.message .header+p {
+            margin-top: 0.25em;
+        }
+
+        .ui.message p {
+            opacity: 0.85;
+            margin: 0.75em 0em;
+        }
+
+        p {
+            margin: 0em 0em 1em;
+            line-height: 1.4285em;
+        }
+
+        .ui.message .header:not(.ui) {
+            font-size: 1.14285714em;
+        }
+
+        .ui.message .header {
+            display: block;
+            font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            margin: -0.14285714em 0em 1.2rem 0em;
+        }
+
+        .ui.button {
+            cursor: pointer;
+            display: inline-block;
+            min-height: 1em;
+            outline: 0;
+            border: none;
+            vertical-align: baseline;
+            background: #e0e1e2 none;
+            color: rgba(0, 0, 0, .6);
+            font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            margin: 0 .25em 0 0;
+            padding: .78571429em 1.5em .78571429em;
+            text-transform: none;
+            text-shadow: none;
+            font-weight: 700;
+            line-height: 1em;
+            font-style: normal;
+            text-align: center;
+            text-decoration: none;
+            border-radius: .28571429rem;
+            box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34, 36, 38, .15) inset;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            transition: opacity .1s ease, background-color .1s ease, color .1s ease, box-shadow .1s ease, background .1s ease;
+            will-change: '';
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .ui.button,
+        .ui.buttons .button,
+        .ui.buttons .or {
+            font-size: 1rem;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+            column-gap: .5rem;
+            display: flex;
+        }
+        
+        .ui.primary.button,
+        .ui.primary.buttons .button {
+            background-color: #2185d0;
+            color: #fff;
+            text-shadow: none;
+            background-image: none;
+        }
+        
+        .ui.primary.button {
+            box-shadow: 0 0 0 0 rgba(34, 36, 38, .15) inset;
+        }
+
+        [type=reset], [type=submit], button, html [type=button] {
+            -webkit-appearance: button;
+        }
+
+        .icon{
+            position: relative;
+            width: 1.2rem;
+            height: 1.2rem;
+            display: block;
+            color: inherit;
+            background-repeat: no-repeat;
+        }
+
+        .icon.database{
+            background-image: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 448 512\" fill=\"%23FFFFFF\"><path d=\"M448 80v48c0 44.2-100.3 80-224 80S0 172.2 0 128V80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6V288c0 44.2-100.3 80-224 80S0 332.2 0 288V186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6V432c0 44.2-100.3 80-224 80S0 476.2 0 432V346.1z\"/></svg>');
+        }
+    </style>
+</head>
+
+<body>
+    <div class='ui container' style='padding-top:2rem'>
+        <section class='ui message'>
+            <div class='content'>
+                <div class='header'>
+                    <h1 class='ui header'>{var_str_title}</h1>
+                </div>
+                <p>{var_str_message}</p>
+                <p>{var_str_message_conn}</p>
+                {v_str_btn_inside}
+            </div>
+        </section>
+    </div>";
+          $str_message_end = "</body>
+</html>";
+          $str_message = str_replace('{var_str_title}', $this->Nm_lang['lang_errm_cmlb_nfndtitle'], $str_message);
+          $str_message = str_replace('{var_str_message}', $this->Nm_lang['lang_errm_cmlb_nfnd'], $str_message);
+          $str_message = str_replace('{v_str_btn_inside}', '', $str_message);
+          echo $str_message;
           if (!$_SESSION['sc_session'][$script_case_init]['form_credential_mob']['iframe_menu'] && (!isset($_SESSION['sc_session'][$script_case_init]['form_credential_mob']['sc_outra_jan']) || $_SESSION['sc_session'][$script_case_init]['form_credential_mob']['sc_outra_jan'] != 'form_credential_mob')) 
           { 
               if (isset($_SESSION['scriptcase']['nm_sc_retorno']) && !empty($_SESSION['scriptcase']['nm_sc_retorno'])) 
@@ -821,6 +936,7 @@ class form_credential_mob_ini
 <?php
               } 
           } 
+          echo $str_message_end;
           exit ;
       }
 
@@ -967,7 +1083,7 @@ class form_credential_mob_ini
       $this->nm_bases_mysql      = array("mysql", "mysqlt", "mysqli", "maxsql", "pdo_mysql", "azure_mysql", "azure_mysqlt", "azure_mysqli", "azure_maxsql", "azure_pdo_mysql", "googlecloud_mysql", "googlecloud_mysqlt", "googlecloud_mysqli", "googlecloud_maxsql", "googlecloud_pdo_mysql", "amazonrds_mysql", "amazonrds_mysqlt", "amazonrds_mysqli", "amazonrds_maxsql", "amazonrds_pdo_mysql");
       $this->nm_bases_sqlite     = array("sqlite", "sqlite3", "pdosqlite");
       $this->nm_bases_all        = array_merge($this->nm_bases_mysql, $this->nm_bases_sqlite);
-      $_SESSION['scriptcase']['nm_bases_security']  = "enc_nm_enc_v1DcXGZSFGD1BeHuBOHuvmV9FeV5FYDoFGHQBqZ1rqHABYHQBiHgvsHEFiHEFqZuJsHQNmDQFaHAveD5NUHgNKDkBOV5FYHMBiHQNmZSBqHArKV5FUDMrYZSXeV5FqHIJsHQJeDQFUHIrKVWXGDMzGDkBOH5B3VEraD9XOZ1B/DSrYHQJwDEBODkFeH5FYVoFGHQJKDQJwHAveD5JwHgrYDkBOV5FYVEFGD9XOH9FaHABYV5FGDMNKZSXeDWr/DoJeD9XsZSX7Z1N7VWFaHgrKV9FeDWXCDoJsDcBwH9B/Z1rYHQJwHgvCZSXeDWXCDoB/D9NwH9X7Z1BYV5raHgvsDkFCDWJeDoraDcJUZ1F7HArYV5FUDEvsHEFiHEFqDoraD9XsDQB/Z1rwD5F7HuNODkBODWrmDoJsD9XOZ1F7HIveD5BqHgBeHEFiV5B3DoF7D9XsDuFaHAveHuBqDMvsVcBODWFYVEF7D9XGZ1rqHIveD5JwHgBYHEJqDWB3ZuJeD9FYDQFUHABYHuJeHgvsVIBsDWXCDoJsDcBwH9B/Z1rYHQJwHgvsHArsHEXCHMBiHQJeDQFUHAveHurqDMvmV9FiV5FYHMraDcFYVINUHAN7HQraHgBYHEFKV5FqHIFGHQJKDuFaHIrKHQXGDMBYZSrCV5FYVoBiDcNmZ1BOD1NaD5JeHgvsHEFKH5FYVoX7D9JKDQX7D1BOV5FGDMBYV9BUHEF/VoBiHQXGZSBqHIBeHQBqHgNODkFeV5FqDoJsHQJKDQFUHAN7HuBqDMBOZSJ3V5FYHIX7HQBiZSBOHIBeHQXGHgBOHEFKV5FqHMBOHQXsH9BiD1BOV5BOHgvOZSrCH5FqDoJeD9JmZ1B/D1NaD5rqHgvsHArsHEXCHIBqHQJKH9FUDSBYHurqDMvmV9FiV5FYHINUHQJmH9BOHAN7HQBODMvCDkFeV5FqHMBiDcXGDuBqHIvsVWBqDMvmV9FiV5FYHMJeHQNwZ1BOD1rKHQBqHgNKHEFKH5FYVoX7D9JKDQX7D1BOV5FGDMBYV9BUHEF/HIFUHQBsZkFGHIveHQFUHgvsDkFeV5B7ZuJeHQJeDuFaZ1N7HQB/DMvmZSrCV5FYHIJsHQNwH9BqHArYHQBqHgveDkBsV5B7ZuJeDcXGH9BiHAvCVWJeHgvOV9FiH5FqDoJeD9JmZ1B/D1NaD5rqHgvsHArsHEXCHIXGHQBiH9FUHINaV5BODMvmV9FiV5FYHIBiHQXGZ1BODSrYHQX7DMveHEFKV5FqHMBqHQJeDQBqD1BeHQB/DMvmV9FiV5FYHMBOHQBiZSBqHIveHuBqHgBOHAFKH5FYVoX7D9JKDQX7D1BOV5FGDMzGVcBUHEBmVoFGHQBqZ1FGHIrwHuB/HgBeDkFeV5FqHMB/DcXGDQFUD1veHQrqDMvmZSrCV5FYHMJwHQJmH9BOHINKZMFaHgvsDkFeV5FqHMX7HQXsZ9F7HABYHuJwDMNOV9FiH5FqDoJeD9JmZ1B/D1NaD5rqHgrKHArsHEB3ZuXGHQFYZSFUHIrKHuJeDMzGZSrCV5FYHMrqHQXOZ1BiD1rKHQFUHgvsDkFeV5FqHMBOHQJeDQFUDSBYHuraDMNOZSJ3V5X/VENUHQJmZSBqD1zGZMBOHgBOHEFKH5FYVoX7D9JKDQX7D1BOV5FGDMzGV9BUHEF/HMraDcNmZkBiHAN7HQFaHgNODkFeV5FqHIFGDcBiDQFaDSrwHQF7DMBOZSrCV5X/VoX7HQJmZSBqHAN7HuBqDMvCDkFeV5B7ZuB/HQFYZSBiHIrKHQFaDMvmV9FiH5FqDoJeD9JmZ1B/D1NaD5rqHgrKHArsHEB3ZuXGDcBiH9FUHAveHQJeDMBOV9FiV5FYHIF7HQBiZ1BOHIBeHQBiDMvCHEFKV5B7ZuFaDcBiDQB/HArYHuJwHgrwV9FiV5X/VEFGHQBsZkBiD1rwHQJeDMveHEFKH5FYVoX7D9JKDQX7D1BOV5FGDMzGV9BUHEF/HIXGHQNwVINUD1vsD5JeHgNOHAFKV5FqHIJwHQNmDQFaHIBeV5FaHgvOV9FiV5FYHMrqHQNwH9BqZ1NOD5JwDMvCDkBsV5B7ZuBqHQXODQB/HAN7HuNUHgvOV9FiH5FqDoJeD9JmZ1B/D1NaD5rqHgrKHArsHEXCHIBOHQJKZSFUHAN7HuBOHgvOV9FiV5X/VENUHQJmZkFGHABYHQFGHgNKHEFKV5FqHMJwDcBiDQBqD1BOV5BqDMrYVcFiV5X/VEraDcNmZSBOHAN7HQJeDMvCDkBsH5FYVoX7D9JKDQX7D1BOV5FGHuzGDkBOH5FqVoJwD9XOZ1F7HABYZMB/DEBeHENiV5FaHIFGHQJeZ9JeZ1rwVWBOHgvsVcBOV5FYVorqD9XOZ1FUZ1BeV5XGDEvsHEFiH5F/DoB/DcJeZSFGD1BOV5JwHuzGDkBOH5FqVoX7D9JmZ1FaHArKZMB/DMBYZSXeDWX7DoXGDcBwDuBOZ1zGVWBqDMrwZSNiHEX/DoJsHQNmZ1BiHAvsZMB/HgvCDkBsH5FYVoX7D9JKDQX7D1BOV5FGHuzGDkBOH5FqVoJwD9JmZ1F7Z1BeD5JeDEvsHENiV5FaHIBiHQXsDQFUD1BeHQJwHgrwVcFeV5X7HIBiHQFYZ1BOHArYHuFUHgNOZSJ3DWFqHIFUHQXsDQFaZ1N7HuFaHuNOZSrCH5FqDoXGHQJmZ1BiHAvCD5BqHgveDkXKH5X/DoBqHQBiDuBqHAvmVWJeDMvmVcFKV5BmVoBqD9BsZkFGHArKV5BODEBOZSJqDWF/HIFUHQJeDQFaDSBYHuBODMBYDkBODWBmVEF7HQBiZ1F7D1rwV5FaHgNKHErCV5FqHMFGHQJKDQJsZ1vCV5FGHuNOV9FeDWXCHIX7DcBqZ1B/HIBeV5JeDEvsHEFiDWFqDoF7HQJKDQJsZ1vCV5FGHuNOV9FeDWB3VEFGHQFYVINUHAvsZMNU";
+      $_SESSION['scriptcase']['nm_bases_security']  = "enc_nm_enc_v1D9FYDQB/HABYVWJsDMBOVcrsH5XKVErqHQBiZ1FGHAN7D5NUHgrKVkJ3DWF/VoBiDcJUZSX7Z1BYHuFaDMvOV9FeV5X/VEBiDcFYH9BqHAN7HQJeHgBeVkJ3DWFGVoFGHQNwH9BiD1BeHQrqHgrwDkB/DWBmDoXGDcFYZ1X7D1zGZMXGHgBYHArCDWFGVoFGHQJKZ9XGHABYHQNUHgrwZSNiH5B3VoBqD9BsZ1F7DSrYD5rqDMrYZSJ3V5B7ZuJsHQXsDQFaZ1N7HQNUDMrYDkBsDWrmDoXGDcFYZSBqZ1vOZMJeHgBeVkJ3H5FGVoFGHQFYDuFaDSN7HuJwDMvmVIB/HEBmDoXGHQBiZ1BOHAvsZMFaHgBYHArCDWFGDoF7D9XsDQJsDSBYV5FGHgNKDkBsDurGVEBiHQNmVIJsHIveHuBqHgrKVkJ3DWrGVoFGHQNwZSFUHABYHQNUDMBOVIBsDWrmDoXGHQBsZkFGD1rwHQXGHgNKHArCV5B3VoFGHQFYH9BiHINaVWJwHgrwV9FeH5XKVoBqD9BsZ1F7DSrYD5rqDMrYZSJ3HEB7ZuJsHQJeDuBqDSBYHurqHgvOVcB/HEX/DoXGDcFYZ1FGD1rKHQFUHgBOHEJqDuXKVoFGHQJeDQFaZ1BYV5FaDMrYZSJqDurGDoXGHQXOVIJsHANOHQFUDMvCVkJ3H5FGDoF7D9XsDQJsDSBYV5FGHgNKDkBsHEX/VEBiHQXOZSBOHAvCZMBqDMveVkJqDWBmVoFGHQXOH9BiDSvCVWJwDMvmVIB/DWrmDoXGHQJmZSBOHAvmZMBOHgNKZSJqDWB3VoFGHQFYDuBqHABYHuraDMrYDkB/DWB3VoBqD9BsZ1F7DSrYD5rqDMrYZSJGH5FYDoF7DcXOZSFGHAveV5FUHuBYVcFKDur/VoJwHQJmVIJsDSvmD5FaDENOHEFiDWX7VoFGD9NwDQJwHANKV5JwHuvmVcrsH5XCDoNUD9BsH9B/D1rwD5JeHgvCZSJGH5FYDoF7D9NwH9X7DSBYV5JeHuBYVcFKH5FqVoB/D9XOH9B/D1zGD5FaDMrYZSXeDuFYVoXGDcJeZ9rqD1BeV5BqHgvsDkB/V5X7DoX7D9BsH9FaD1rwZMB/DMNKZSJ3H5F/HIFUHQFYZSBiDSrwHQNUDMBYDkB/DWB3DoXGDcFYZ1BOD1rKHuX7HgBOHArCDWFqHIBiHQNmH9BiHAveD5NUHgNKDkBOV5FYHMBiD9BsZSBODSNOD5JeHgBeVkJqDWF/HMX7DcXGDuBqD1BeVWBqHgrKVIBsDuX7HMFUHQBsH9B/HArYHQJwDEBODkFeH5FYVoFGHQJKDQBOZ1rwD5JeHuNODkFCDWJeDoXGDcNwH9B/D1rwD5XGDMzGHEXeH5F/VoB/D9XsH9FGD1veD5BqHgvsVcBODuFqVoJwD9BsZ1B/Z1BeD5F7HgvCVkJGDWF/VoJeD9NwDQFaHAveD5NUHgNKDkBOV5FYHMBiHQJmZ1F7Z1vmD5rqDEBOHArCDWF/HIXGHQNmDQB/HArYHuXGHgrwVcBOHEF/VoBOHQBiH9BqHANOHQJwDEBODkFeH5FYVoFGHQJKDQJwHAveD5JwHgrYDkBOV5FYVEFGD9XOH9FaHABYV5FGDMNKZSXeDWr/DoJeD9XsZSX7Z1N7VWFaHgrKV9FeDWXCDoJsDcBwH9B/Z1rYHQJwHgveDkXKDWBmDoJeHQXODQBqHANKV5XGDMvOZSNiDWFaHMBiD9BsVIraD1rwV5X7HgBeHEBUH5F/HIrqD9XsZSBiZ1N7HuBiHuNOVcrsDWF/DoF7HQJmZ1F7Z1vmD5rqDEBOHArCDWF/HMJeDcJeDQX7HIrwD5BqHuBYVcFKDWFYVoBqHQJmZ1F7Z1vmD5rqDEBOHArCDWBmZuXGHQXGZ9XGHANKVWFU";
       $this->prep_conect();
       $this->conectDB();
       if (!in_array(strtolower($this->nm_tpbanco), $this->nm_bases_all))
@@ -1062,6 +1178,10 @@ class form_credential_mob_ini
       }
       if (!$_SESSION['sc_session'][$this->sc_page]['form_credential_mob']['embutida_form'] || !$_SESSION['sc_session'][$this->sc_page]['form_credential_mob']['embutida_proc']) 
       {
+          if (!isset($_SESSION['org'])) 
+          {
+              $this->nm_falta_var .= "org; ";
+          }
       }
 // 
       if (!isset($_SESSION['scriptcase']['glo_tpbanco']))
@@ -1209,162 +1329,269 @@ class form_credential_mob_ini
 // 
       if (!empty($this->nm_falta_var) || !empty($this->nm_falta_var_db) || $nm_crit_perfil)
       {
-          echo "<style type=\"text/css\">";
-          echo ".scButton_cancel { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#C02A21; border-style:solid; border-radius:30px; background-color:#C02A21; filter: alpha(opacity=100); opacity:1; padding:3px 13px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_cancel:hover { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#C02A21; border-style:solid; border-radius:30px; background-color:#C02A21; filter: alpha(opacity=74); opacity:0.74; padding:3px 13px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_cancel:active { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#C02A21; border-style:solid; border-radius:30px; background-color:#C02A21; filter: alpha(opacity=83); opacity:0.83; padding:3px 13px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_cancel_disabled { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#C02A21; border-style:solid; border-radius:30px; background-color:#C02A21; filter: alpha(opacity=33); opacity:0.33; padding:3px 13px; cursor:default; transition:all 0.2s;  }";
-          echo ".scButton_cancel_selected { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#C02A21; border-style:solid; border-radius:30px; background-color:#C02A21; filter: alpha(opacity=100); opacity:1; padding:3px 13px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_cancel_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_cancel_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_check { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=100); opacity:1; padding:3px 13px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_check:hover { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=77); opacity:0.77; padding:3px 13px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_check:active { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=78); opacity:0.78; padding:3px 13px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_check_disabled { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=33); opacity:0.33; padding:3px 13px; cursor:default;  }";
-          echo ".scButton_check_selected { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=79); opacity:0.79; padding:3px 13px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_check_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_check_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_danger { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#C02A21; border-style:solid; border-radius:30px; background-color:#C02A21; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_danger:hover { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#C02A21; border-style:solid; border-radius:30px; background-color:#C02A21; filter: alpha(opacity=80); opacity:0.8; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_danger:active { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#C02A21; border-style:solid; border-radius:30px; background-color:#C02A21; filter: alpha(opacity=82); opacity:0.82; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_danger_disabled { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#C02A21; border-style:solid; border-radius:30px; background-color:#C02A21; filter: alpha(opacity=34); opacity:0.34; padding:9px 12px; cursor:default; transition:all 0.2s;  }";
-          echo ".scButton_danger_selected { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#C02A21; border-style:solid; border-radius:30px; background-color:#C02A21; filter: alpha(opacity=85); opacity:0.85; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_danger_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_danger_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_default { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#247159; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#EBF2F0; border-style:solid; border-radius:30px; background-color:#EBF2F0; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_default:hover { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#528978; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_default:active { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#528978; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_default_disabled { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#1B211F; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#EBF2F0; border-style:solid; border-radius:30px; background-color:#EBF2F0; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=44); opacity:0.44; padding:9px 12px; cursor:default; transition:all 0.2s;  }";
-          echo ".scButton_default_selected { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#528978; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_default_list { background-color:#ffffff; filter: alpha(opacity=100); opacity:1; padding:6px 52px 6px 15px; cursor:pointer; font-family:Arial, sans-serif; font-size:13px; text-decoration:none; color:#3C4858;  }";
-          echo ".scButton_default_list:hover { background-color:#EFF2F7; filter: alpha(opacity=100); opacity:1; padding:6px 52px 6px 15px; cursor:pointer; font-family:Arial, sans-serif; font-size:13px; text-decoration:none; color:#3C4858;  }";
-          echo ".scButton_default_list_disabled { background-color:#ffffff; font-family:Arial, sans-serif; font-size:13px; text-decoration:none; color:#3C4858; padding:6px 52px 6px 15px; filter: alpha(opacity=45); opacity:0.45; cursor:default;  }";
-          echo ".scButton_default_list_selected { background-color:#ffffff; font-family:Arial, sans-serif; font-size:13px; text-decoration:none; color:#3C4858; padding:6px 52px 6px 15px; cursor:pointer; filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_default_list:active { background-color:#EFF2F7; filter: alpha(opacity=100); opacity:1; padding:6px 52px 6px 15px; cursor:pointer; font-family:Arial, sans-serif; font-size:13px; text-decoration:none; color:#3C4858;  }";
-          echo ".scButton_facebook { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#3b5998; border-style:solid; border-radius:30px; background-color:#3b5998; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_facebook:hover { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#304d8a; border-style:solid; border-radius:30px; background-color:#304d8a; box-shadow:inset 0 -1px 0 rgba(31, 45, 61, 0.15); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_facebook:active { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#2d4373; border-style:solid; border-radius:30px; background-color:#2d4373; box-shadow:inset 0 -1px 0 rgba(31, 45, 61, 0.15); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_facebook_disabled { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#3b5998; border-style:solid; border-radius:30px; background-color:#3b5998; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=44); opacity:0.44; padding:9px 12px; cursor:default; transition:all 0.2s;  }";
-          echo ".scButton_facebook_selected { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:#3b5998; border-color:#3b5998; border-style:solid; border-radius:30px; background-color:#3b5998; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_facebook_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_facebook_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_fontawesome { color:#247159; font-size:15px; text-decoration:none; border-style:none; filter: alpha(opacity=100); opacity:1; padding:5px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_fontawesome:hover { color:#247159; font-size:15px; text-decoration:none; border-style:none; filter: alpha(opacity=100); opacity:1; padding:5px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_fontawesome:active { color:#247159; font-size:15px; text-decoration:none; filter: alpha(opacity=100); opacity:1; padding:5px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_fontawesome_disabled { color:#247159; font-size:15px; text-decoration:none; border-style:none; filter: alpha(opacity=44); opacity:0.44; padding:5px; cursor:default; transition:all 0.2s;  }";
-          echo ".scButton_fontawesome_selected { color:#247159; font-size:15px; text-decoration:none; border-style:none; filter: alpha(opacity=100); opacity:1; padding:5px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_fontawesome_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_fontawesome_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_fontawesome_light { color:#247159; font-size:15px; text-decoration:none; border-style:none; filter: alpha(opacity=100); opacity:1; padding:5px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_fontawesome_light:hover { color:#247159; font-size:15px; text-decoration:none; border-style:none; filter: alpha(opacity=100); opacity:1; padding:5px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_fontawesome_light:active { color:#247159; font-size:15px; text-decoration:none; filter: alpha(opacity=100); opacity:1; padding:5px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_fontawesome_light_disabled { color:#247159; font-size:15px; text-decoration:none; border-style:none; filter: alpha(opacity=44); opacity:0.44; padding:5px; cursor:default; transition:all 0.2s;  }";
-          echo ".scButton_fontawesome_light_selected { color:#247159; font-size:15px; text-decoration:none; border-style:none; filter: alpha(opacity=100); opacity:1; padding:5px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_fontawesome_light_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_fontawesome_light_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_google { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#dd4b39; border-style:solid; border-radius:30px; background-color:#dd4b39; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_google:hover { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#e0321c; border-style:solid; border-radius:30px; background-color:#e0321c; box-shadow:inset 0 -1px 0 rgba(31, 45, 61, 0.15); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_google:active { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#c23321; border-style:solid; border-radius:30px; background-color:#c23321; box-shadow:inset 0 -1px 0 rgba(31, 45, 61, 0.15); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_google_disabled { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#dd4b39; border-style:solid; border-radius:30px; background-color:#dd4b39; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=44); opacity:0.44; padding:9px 12px; cursor:default; transition:all 0.2s;  }";
-          echo ".scButton_google_selected { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#dd4b39; border-style:solid; border-radius:30px; background-color:#dd4b39; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_google_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_google_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_icons { color:#247159; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#EBF2F0; border-style:solid; border-radius:30px; background-color:#EBF2F0; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_icons:hover { color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_icons:active { color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_icons_disabled { color:#1B211F; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#EBF2F0; border-style:solid; border-radius:30px; background-color:#EBF2F0; filter: alpha(opacity=44); opacity:0.44; padding:9px 12px; cursor:default; transition:all 0.2s;  }";
-          echo ".scButton_icons_selected { color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_icons_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_icons_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_ok { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_ok:hover { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=81); opacity:0.81; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_ok:active { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=77); opacity:0.77; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_ok_disabled { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=33); opacity:0.33; padding:9px 12px; cursor:default; transition:all 0.2s;  }";
-          echo ".scButton_ok_selected { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=78); opacity:0.78; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_ok_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_ok_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_paypal { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#2185d0; border-style:solid; border-radius:30px; background-color:#2185d0; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_paypal:hover { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#1678c2; border-style:solid; border-radius:30px; background-color:#1678c2; box-shadow:inset 0 -1px 0 rgba(31, 45, 61, 0.15); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_paypal:active { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#1a69a4; border-style:solid; border-radius:30px; background-color:#1a69a4; box-shadow:inset 0 -1px 0 rgba(31, 45, 61, 0.15); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_paypal_disabled { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#2185d0; border-style:solid; border-radius:30px; background-color:#2185d0; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=44); opacity:0.44; padding:9px 12px; cursor:default; transition:all 0.2s;  }";
-          echo ".scButton_paypal_selected { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#2185d0; border-style:solid; border-radius:30px; background-color:#2185d0; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_paypal_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_paypal_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_sc_image {  }";
-          echo ".scButton_sc_image:hover {  }";
-          echo ".scButton_sc_image:active {  }";
-          echo ".scButton_sc_image_disabled {  }";
-          echo ".scButton_small { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#247159; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#EBF2F0; border-style:solid; border-radius:30px; background-color:#EBF2F0; filter: alpha(opacity=100); opacity:1; padding:3px 13px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_small:hover { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=100); opacity:1; padding:3px 13px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_small:active { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=100); opacity:1; padding:3px 13px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_small_disabled { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#1B211F; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#EBF2F0; border-style:solid; border-radius:30px; background-color:#EBF2F0; filter: alpha(opacity=50); opacity:0.5; padding:3px 13px; cursor:default;  }";
-          echo ".scButton_small_selected { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:bold; text-decoration:none; border-width:1px; border-color:#247159; border-style:solid; border-radius:30px; background-color:#247159; filter: alpha(opacity=100); opacity:1; padding:3px 13px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_small_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_small_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_sweetalertcancel { font-family:Arial, sans-serif; color:#fff; font-size:17px; font-weight:normal; text-decoration:none; border-width:0px; border-color:#aaa; border-style:solid; border-radius:30px; background-color:#aaa; box-shadow:none; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_sweetalertcancel:hover { font-family:Arial, sans-serif; color:#fff; font-size:17px; font-weight:normal; text-decoration:none; border-width:0px; border-color:#999; border-style:solid; border-radius:30px; background-color:#999; box-shadow:none; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_sweetalertcancel:active { font-family:Arial, sans-serif; color:#fff; font-size:17px; font-weight:normal; text-decoration:none; border-width:0px; border-color:#3085d6; border-style:solid; border-radius:30px; background-color:#3085d6; box-shadow:none; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_sweetalertcancel_disabled { font-family:Arial, sans-serif; color:#fff; font-size:17px; font-weight:normal; text-decoration:none; border-width:0px; border-color:#aaa; border-style:solid; border-radius:30px; background-color:#aaa; box-shadow:none; filter: alpha(opacity=44); opacity:0.44; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_sweetalertcancel_selected { font-family:Arial, sans-serif; color:#fff; font-size:17px; font-weight:normal; text-decoration:none; border-width:0px; border-color:#7a7a7a; border-style:solid; border-radius:30px; background-color:#7a7a7a; box-shadow:none; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_sweetalertcancel_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_sweetalertcancel_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_sweetalertok { font-family:Arial, sans-serif; color:#fff; font-size:17px; font-weight:normal; text-decoration:none; border-width:0px; border-color:#3085d6; border-style:solid; border-radius:30px; background-color:#3085d6; box-shadow:none; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_sweetalertok:hover { font-family:Arial, sans-serif; color:#fff; font-size:17px; font-weight:normal; text-decoration:none; border-width:0px; border-color:#2b77c0; border-style:solid; border-radius:30px; background-color:#2b77c0; box-shadow:none; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_sweetalertok:active { font-family:Arial, sans-serif; color:#fff; font-size:17px; font-weight:normal; text-decoration:none; border-width:0px; border-color:#266aab; border-style:solid; border-radius:30px; background-color:#266aab; box-shadow:none; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_sweetalertok_disabled { font-family:Arial, sans-serif; color:#fff; font-size:17px; font-weight:normal; text-decoration:none; border-width:0px; border-color:#3085d6; border-style:solid; border-radius:30px; background-color:#3085d6; box-shadow:none; filter: alpha(opacity=44); opacity:0.44; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_sweetalertok_selected { font-family:Arial, sans-serif; color:#fff; font-size:17px; font-weight:normal; text-decoration:none; border-width:0px; border-color:#266aab; border-style:solid; border-radius:30px; background-color:#266aab; box-shadow:none; filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_sweetalertok_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_sweetalertok_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_twitter { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#55acee; border-style:solid; border-radius:30px; background-color:#55acee; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_twitter:hover { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#35a2f4; border-style:solid; border-radius:30px; background-color:#35a2f4; box-shadow:inset 0 -1px 0 rgba(31, 45, 61, 0.15); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_twitter:active { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#2795e9; border-style:solid; border-radius:30px; background-color:#2795e9; box-shadow:inset 0 -1px 0 rgba(31, 45, 61, 0.15); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_twitter_disabled { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#55acee; border-style:solid; border-radius:30px; background-color:#55acee; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=44); opacity:0.44; padding:9px 12px; cursor:default; transition:all 0.2s;  }";
-          echo ".scButton_twitter_selected { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#55acee; border-style:solid; border-radius:30px; background-color:#55acee; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_twitter_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_twitter_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_youtube { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:red; border-style:solid; border-radius:30px; background-color:red; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_youtube:hover { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#e60000; border-style:solid; border-radius:30px; background-color:#e60000; box-shadow:inset 0 -1px 0 rgba(31, 45, 61, 0.15); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_youtube:active { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:#c00; border-style:solid; border-radius:30px; background-color:#c00; box-shadow:inset 0 -1px 0 rgba(31, 45, 61, 0.15); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_youtube_disabled { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:red; border-style:solid; border-radius:30px; background-color:red; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=44); opacity:0.44; padding:9px 12px; cursor:default; transition:all 0.2s;  }";
-          echo ".scButton_youtube_selected { font-family:Leelawadee, Ebrima, 'Bahnschrift Light', Gadugi, 'Nirmala UI', 'Segoe UI', Verdana; color:#fff; font-size:13px; font-weight:normal; text-decoration:none; border-width:1px; border-color:red; border-style:solid; border-radius:30px; background-color:red; box-shadow:0 2px 6px 0 rgba(227,234,239,.5); filter: alpha(opacity=100); opacity:1; padding:9px 12px; cursor:pointer; transition:all 0.2s;  }";
-          echo ".scButton_youtube_list { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scButton_youtube_list:hover { filter: alpha(opacity=100); opacity:1;  }";
-          echo ".scLink_default { text-decoration: underline; font-size: 13px; color: #1a0dab;  }";
-          echo ".scLink_default:visited { text-decoration: underline; font-size: 13px; color: #660099;  }";
-          echo ".scLink_default:active { text-decoration: underline; font-size: 13px; color: #1a0dab;  }";
-          echo ".scLink_default:hover { text-decoration: underline; font-size: 13px; color: #1a0dab;  }";
-          echo "</style>";
-          echo "<table width=\"80%\" border=\"1\" height=\"117\">";
+          $str_message = "<html>
+
+<head>
+    <title>{var_str_title}</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            overflow-x: hidden;
+            min-width: 320px;
+            background: #FFFFFF;
+            font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            line-height: 1.4285em;
+            color: rgba(0, 0, 0, 0.87);
+            font-smoothing: antialiased;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        user agent stylesheet body {
+            display: block;
+            margin: 8px;
+        }
+
+        html {
+            font-size: 14px;
+        }
+
+        html {
+            line-height: 1.15;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        ::selection {
+            background-color: #CCE2FF;
+            color: rgba(0, 0, 0, 0.87);
+        }
+
+        .ui.container {
+            width: 933px;
+            min-width: 992px;
+            max-width: 1199px;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        .ui.container {
+            display: block;
+            max-width: 100% !important;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        .ui.message:last-child {
+            margin-bottom: 0em;
+        }
+
+        .ui.message:first-child {
+            margin-top: 0em;
+        }
+
+        .ui.message {
+            font-size: 1em;
+        }
+
+        .ui.message {
+            position: relative;
+            min-height: 1em;
+            margin: 1em 0em;
+            background: #F8F8F9;
+            padding: 1em 1.5em;
+            line-height: 1.4285em;
+            color: rgba(0, 0, 0, 0.87);
+            transition: opacity 0.1s ease, color 0.1s ease, background 0.1s ease, box-shadow 0.1s ease;
+            border-radius: 0.28571429rem;
+            box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.22) inset, 0px 0px 0px 0px rgba(0, 0, 0, 0);
+        }
+
+        article,
+        aside,
+        footer,
+        header,
+        nav,
+        section {
+            display: block;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        .ui.message> :last-child {
+            margin-bottom: 0em;
+        }
+
+        .ui.message> :first-child {
+            margin-top: 0em;
+        }
+
+        .ui.message .header+p {
+            margin-top: 0.25em;
+        }
+
+        .ui.message p {
+            opacity: 0.85;
+            margin: 0.75em 0em;
+        }
+
+        p {
+            margin: 0em 0em 1em;
+            line-height: 1.4285em;
+        }
+
+        .ui.message .header:not(.ui) {
+            font-size: 1.14285714em;
+        }
+
+        .ui.message .header {
+            display: block;
+            font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            margin: -0.14285714em 0em 1.2rem 0em;
+        }
+
+        .ui.button {
+            cursor: pointer;
+            display: inline-block;
+            min-height: 1em;
+            outline: 0;
+            border: none;
+            vertical-align: baseline;
+            background: #e0e1e2 none;
+            color: rgba(0, 0, 0, .6);
+            font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            margin: 0 .25em 0 0;
+            padding: .78571429em 1.5em .78571429em;
+            text-transform: none;
+            text-shadow: none;
+            font-weight: 700;
+            line-height: 1em;
+            font-style: normal;
+            text-align: center;
+            text-decoration: none;
+            border-radius: .28571429rem;
+            box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34, 36, 38, .15) inset;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            transition: opacity .1s ease, background-color .1s ease, color .1s ease, box-shadow .1s ease, background .1s ease;
+            will-change: '';
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .ui.button,
+        .ui.buttons .button,
+        .ui.buttons .or {
+            font-size: 1rem;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+            column-gap: .5rem;
+            display: flex;
+        }
+        
+        .ui.primary.button,
+        .ui.primary.buttons .button {
+            background-color: #2185d0;
+            color: #fff;
+            text-shadow: none;
+            background-image: none;
+        }
+        
+        .ui.primary.button {
+            box-shadow: 0 0 0 0 rgba(34, 36, 38, .15) inset;
+        }
+
+        [type=reset], [type=submit], button, html [type=button] {
+            -webkit-appearance: button;
+        }
+
+        .icon{
+            position: relative;
+            width: 1.2rem;
+            height: 1.2rem;
+            display: block;
+            color: inherit;
+            background-repeat: no-repeat;
+        }
+
+        .icon.database{
+            background-image: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 448 512\" fill=\"%23FFFFFF\"><path d=\"M448 80v48c0 44.2-100.3 80-224 80S0 172.2 0 128V80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6V288c0 44.2-100.3 80-224 80S0 332.2 0 288V186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6V432c0 44.2-100.3 80-224 80S0 476.2 0 432V346.1z\"/></svg>');
+        }
+    </style>
+</head>
+
+<body>
+    <div class='ui container' style='padding-top:2rem'>
+        <section class='ui message'>
+            <div class='content'>
+                <div class='header'>
+                    <h1 class='ui header'>{var_str_title}</h1>
+                </div>
+                <p>{var_str_message}</p>
+                <p>{var_str_message_conn}</p>
+                {v_str_btn_inside}
+            </div>
+        </section>
+    </div>";
+          $str_message_end = "</body>
+</html>";
+          $str_message = str_replace('{var_str_title}', $this->Nm_lang['lang_errm_dbcn_create'], $str_message);
           if (empty($this->nm_falta_var_db))
           {
               if (!empty($this->nm_falta_var))
               {
-                  echo "<tr>";
-                  echo "   <td bgcolor=\"\">";
-                  echo "       <b><font size=\"4\">" . $this->Nm_lang['lang_errm_glob'] . "</font>";
-                  echo "  " . $this->nm_falta_var;
-                  echo "   </b></td>";
-                  echo " </tr>";
+                  $str_message = str_replace('{var_str_message}', $this->Nm_lang['lang_errm_glob'] . $this->nm_falta_var, $str_message);
               }
               if ($nm_crit_perfil)
               {
-                  echo "<tr>";
-                  echo "   <td bgcolor=\"\">";
-                  echo "       <b><font size=\"4\">" . $this->Nm_lang['lang_errm_dbcn_nfnd'] . "</font>";
-                  echo "  " . $perfil_trab;
-                  echo "   </b></td>";
-                  echo " </tr>";
+                  $str_message = str_replace('{var_str_message}', $this->Nm_lang['lang_errm_dbcn_nfnd'] . ' ' . $perfil_trab, $str_message);
+                  $str_message = str_replace('{v_str_btn_inside}', "<button class='ui button primary' style='font-size: 16px!important;'><a href='" . $this->path_prod . "' style='color: white;text-decoration:none'><i class='icon database' style='float: left;padding-right: .5rem;'></i>". $this->Nm_lang['lang_errm_dbcn_create'] ."</a></button>", $str_message);
               }
           }
           else
           {
-              echo "<tr>";
-              echo "   <td bgcolor=\"\">";
-              echo "       <b><font size=\"4\">" . $this->Nm_lang['lang_errm_dbcn_data'] . "</font></b>";
-              echo "   </td>";
-              echo " </tr>";
+              $str_message = str_replace('{var_str_message}', $this->Nm_lang['lang_errm_dbcn_data'], $str_message);
           }
-          echo "</table>";
+          $str_message = str_replace('{v_str_btn_inside}', '', $str_message);
+          echo $str_message;
           if (!$_SESSION['sc_session'][$this->sc_page]['form_credential_mob']['iframe_menu'] && (!isset($_SESSION['sc_session'][$this->sc_page]['form_credential_mob']['sc_outra_jan']) || $_SESSION['sc_session'][$this->sc_page]['form_credential_mob']['sc_outra_jan'] != 'form_credential_mob')) 
           { 
               if (isset($_SESSION['scriptcase']['nm_sc_retorno']) && !empty($_SESSION['scriptcase']['nm_sc_retorno'])) 
@@ -1374,7 +1601,7 @@ class form_credential_mob_ini
 
 <?php
               } 
-              else 
+              elseif(!empty($nm_url_saida)) 
               { 
 ?>
                   <input type="button" id="sai" onClick="window.location='<?php echo $nm_url_saida ?>'; return false" class="scButton_danger" value="<?php echo $this->Nm_lang['lang_btns_exit'] ?>" title="<?php echo $this->Nm_lang['lang_btns_exit_hint'] ?>" style="<?php echo $sCondStyle; ?>vertical-align: middle;display: ''">
@@ -1382,6 +1609,7 @@ class form_credential_mob_ini
 <?php
               } 
           } 
+          echo $str_message_end;
           exit ;
       }
       if (isset($_SESSION['scriptcase']['glo_db_master_usr']) && !empty($_SESSION['scriptcase']['glo_db_master_usr']))
@@ -1878,6 +2106,10 @@ ob_start();
         {
             $_SESSION['token'] = $token;
         }
+        if (isset($org)) 
+        {
+            $_SESSION['org'] = $org;
+        }
     } 
     elseif (isset($script_case_init) && !empty($script_case_init) && !is_array($script_case_init) && isset($_SESSION['sc_session'][$script_case_init]['form_credential_mob']['parms']))
     {
@@ -2105,6 +2337,16 @@ ob_start();
         {
             $_SESSION['token'] = $_GET["token"];
             nm_limpa_str_form_credential_mob($_SESSION['token']);
+        }
+        if (isset($_POST["org"])) 
+        {
+            $_SESSION['org'] = $_POST["org"];
+            nm_limpa_str_form_credential_mob($_SESSION['org']);
+        }
+        if (isset($_GET["org"])) 
+        {
+            $_SESSION['org'] = $_GET["org"];
+            nm_limpa_str_form_credential_mob($_SESSION['org']);
         }
         if (!empty($_SESSION['sc_session'][$script_case_init]['form_credential_mob']['volta_redirect_apl']))
         {

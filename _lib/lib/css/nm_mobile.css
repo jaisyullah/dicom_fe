@@ -1383,3 +1383,40 @@ div#ui-datepicker-div > * {
     float: none !important;
     width: auto !important;
 }
+
+.group_col_backdrop {
+    z-index: 11 !important;
+    background: rgba(0,0,0,.3);
+}
+
+body .field_grouping_container_placeholder.open_group {
+    z-index: 12 !important;
+}
+
+.field_grouping_container_placeholder.open_group .field_grouping_columns_placeholder {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,.3);
+    border: none;
+    border-radius: 8px;
+    width: 80vw;
+    z-index: 12;
+}
+
+.field_grouping_container_placeholder > div, .field_grouping_container_placeholder > span > div {
+    position: static;
+}
+
+.field_grouping_container_placeholder.open_group .field_grouping_columns_placeholder td {
+    padding: 10px 20px;
+}
+.field_grouping_container_placeholder.open_group .field_grouping_columns_placeholder td.field_grouping_title {
+    padding: 30px 20px 0 20px;
+}
+
+.SC_SubMenuApp:not(#add_grid_search) > div > table,
+.SC_SubMenuApp:not(#add_grid_search) > table {
+    width: 100%;
+}

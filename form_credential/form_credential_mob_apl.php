@@ -276,13 +276,25 @@ class form_credential_mob_apl
       {
           $_SESSION['token'] = $this->token;
       }
+      if (isset($this->org) && isset($this->NM_contr_var_session) && $this->NM_contr_var_session == "Yes") 
+      {
+          $_SESSION['org'] = $this->org;
+      }
       if (isset($_POST["token"]) && isset($this->token)) 
       {
           $_SESSION['token'] = $this->token;
       }
+      if (isset($_POST["org"]) && isset($this->org)) 
+      {
+          $_SESSION['org'] = $this->org;
+      }
       if (isset($_GET["token"]) && isset($this->token)) 
       {
           $_SESSION['token'] = $this->token;
+      }
+      if (isset($_GET["org"]) && isset($this->org)) 
+      {
+          $_SESSION['org'] = $this->org;
       }
       if (isset($this->nmgp_opcao) && $this->nmgp_opcao == "reload_novo") {
           $_POST['nmgp_opcao'] = "novo";
@@ -336,6 +348,10 @@ class form_credential_mob_apl
           {
               $_SESSION['token'] = $this->token;
           }
+          if (isset($this->org)) 
+          {
+              $_SESSION['org'] = $this->org;
+          }
           if (isset($this->NM_where_filter_form))
           {
               $_SESSION['sc_session'][$script_case_init]['form_credential_mob']['where_filter_form'] = $this->NM_where_filter_form;
@@ -352,6 +368,10 @@ class form_credential_mob_apl
           if (isset($this->token)) 
           {
               $_SESSION['token'] = $this->token;
+          }
+          if (isset($this->org)) 
+          {
+              $_SESSION['org'] = $this->org;
           }
       } 
       elseif (isset($script_case_init) && !empty($script_case_init) && isset($_SESSION['sc_session'][$script_case_init]['form_credential_mob']['parms']))
@@ -518,7 +538,7 @@ class form_credential_mob_apl
 
       $this->arr_buttons['test']['hint']             = "";
       $this->arr_buttons['test']['type']             = "button";
-      $this->arr_buttons['test']['value']            = "Test";
+      $this->arr_buttons['test']['value']            = "Generate";
       $this->arr_buttons['test']['display']          = "text_fontawesomeicon";
       $this->arr_buttons['test']['display_position'] = "text_right";
       $this->arr_buttons['test']['style']            = "default";
@@ -1211,7 +1231,7 @@ class form_credential_mob_apl
               }
               $campos_erro = $this->Formata_Erros($Campos_Crit, $Campos_Falta, $Campos_Erros, 4);
               $this->Campos_Mens_erro = ""; 
-              $this->Erro->mensagem(__FILE__, __LINE__, "critica", $campos_erro); 
+              $this->Erro->mensagem(__FILE__, __LINE__, "critica", $campos_erro, '', true, true); 
               $this->nmgp_opc_ant = $this->nmgp_opcao ; 
               if ($this->nmgp_opcao == "incluir" && $nm_apl_dependente == 1) 
               { 
@@ -1506,7 +1526,7 @@ if (isset($_SESSION['scriptcase']['device_mobile']) && $_SESSION['scriptcase']['
       var sc_tbLangEsc = "<?php echo html_entity_decode($this->Ini->Nm_lang["lang_tb_esc"], ENT_COMPAT, $_SESSION["scriptcase"]["charset"]) ?>";
       var sc_userSweetAlertDisplayed = false;
     </SCRIPT>
-    <SCRIPT type="text/javascript" src="../_lib/lib/js/jquery-3.6.0.min.js"></SCRIPT>
+    <SCRIPT type="text/javascript" src="<?php echo $this->Ini->url_third; ?>jquery/js/jquery.js"></SCRIPT>
     <SCRIPT type="text/javascript" src="<?php echo $this->Ini->path_prod; ?>/third/jquery_plugin/malsup-blockui/jquery.blockUI.js"></SCRIPT>
     <SCRIPT type="text/javascript" src="<?php echo $this->Ini->path_prod; ?>/third/jquery_plugin/thickbox/thickbox-compressed.js"></SCRIPT>
 <?php
@@ -1549,6 +1569,10 @@ include_once("form_credential_mob_sajax_js.php");
           {
               $varloc_btn_php['client_secret'] = $_SESSION['sc_session'][$this->Ini->sc_page]['form_credential_mob']['dados_form']['client_secret'];
           }
+          if (!isset($this->organization_id) && isset($_SESSION['sc_session'][$this->Ini->sc_page]['form_credential_mob']['dados_form']['organization_id']))
+          {
+              $varloc_btn_php['organization_id'] = $_SESSION['sc_session'][$this->Ini->sc_page]['form_credential_mob']['dados_form']['organization_id'];
+          }
       }
       $nm_f_saida = "form_credential_mob.php";
       nm_limpa_numero($this->id, $this->field_config['id']['symbol_grp']) ; 
@@ -1558,6 +1582,7 @@ include_once("form_credential_mob_sajax_js.php");
           $this->$cmp = $val_cmp;
       }
       $_SESSION['scriptcase']['form_credential_mob']['contr_erro'] = 'on';
+if (!isset($this->sc_temp_org)) {$this->sc_temp_org = (isset($_SESSION['org'])) ? $_SESSION['org'] : "";}
 if (!isset($this->sc_temp_token)) {$this->sc_temp_token = (isset($_SESSION['token'])) ? $_SESSION['token'] : "";}
  $curl = curl_init();
 
@@ -1595,8 +1620,10 @@ if (isset($response_data['access_token'])) {
 }
 
 $this->sc_temp_token = $access_token;
+$this->sc_temp_org = $this->organization_id ;
 
 if (isset($this->sc_temp_token)) { $_SESSION['token'] = $this->sc_temp_token;}
+if (isset($this->sc_temp_org)) { $_SESSION['org'] = $this->sc_temp_org;}
 $_SESSION['scriptcase']['form_credential_mob']['contr_erro'] = 'off'; 
     echo ob_get_clean();
 ?>
@@ -2810,8 +2837,16 @@ $_SESSION['scriptcase']['form_credential_mob']['contr_erro'] = 'off';
       {
           $this->client_id_before_qstr = $this->client_id;
           $this->client_id = substr($this->Db->qstr($this->client_id), 1, -1); 
+          if (in_array(strtolower($this->Ini->nm_tpbanco), $this->Ini->nm_bases_mysql))
+          {
+              $this->client_id = str_replace(array("\\r\\n", "\\n", "\r\n"), array("\r\n", "\n", "\n"), $this->client_id);
+          }
           $this->client_secret_before_qstr = $this->client_secret;
           $this->client_secret = substr($this->Db->qstr($this->client_secret), 1, -1); 
+          if (in_array(strtolower($this->Ini->nm_tpbanco), $this->Ini->nm_bases_mysql))
+          {
+              $this->client_secret = str_replace(array("\\r\\n", "\\n", "\r\n"), array("\r\n", "\n", "\n"), $this->client_secret);
+          }
       }
       if ($this->nmgp_opcao == "alterar") 
       {

@@ -23,7 +23,7 @@ class form_examination_erro
    }
 
    //----- 
-   function mensagem($script, $linha, $tipo, $mensagem, $complemento = "", $exibe = true)
+   function mensagem($script, $linha, $tipo, $mensagem, $complemento = "", $exibe=true, $err_usr=false)
    {
       $this->script      = $script;
       $this->linha       = $linha;
@@ -35,7 +35,7 @@ class form_examination_erro
           return false;
       }
       $this->monta_mensagem();
-      return form_examination_scriptcase_error_handler(E_USER_ERROR, $this->msg_final, $script, $linha, $exibe);
+      return form_examination_scriptcase_error_handler(E_USER_ERROR, $this->msg_final, $script, $linha, $exibe, $err_usr);
    }
 
    //----- 

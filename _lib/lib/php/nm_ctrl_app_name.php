@@ -29,6 +29,7 @@
        {
            return $_SESSION['scriptcase']['SC_app_names'][$proj][$orig_dir];
        }
+/*
        $ini_file = $_SESSION['scriptcase']['SC_app_dir'] . "_lib/friendly_url/" . $orig_dir . "_ini.txt";
        if (is_file($ini_file))
        {
@@ -38,6 +39,15 @@
                $sc_init_apl[0] = str_replace(array('\r', '\n') , '', $sc_init_apl[0]);
                $_SESSION['scriptcase']['SC_app_names'][$proj][$orig_dir] = trim($sc_init_apl[0]);
                return trim($sc_init_apl[0]);
+           }
+       }
+*/
+       $ini_file = $_SESSION['scriptcase']['SC_app_dir'] . "_lib/_app_data/" . $orig_dir . "_ini.php";
+       if (is_file($ini_file)) {
+           require ($ini_file);
+           if (isset($arr_data['friendly_url'])) {
+               $_SESSION['scriptcase']['SC_app_names'][$proj][$orig_dir] = trim($arr_data['friendly_url']);
+               return trim($arr_data['friendly_url']);
            }
        }
        return $orig_dir;

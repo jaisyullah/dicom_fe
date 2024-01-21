@@ -294,13 +294,25 @@ class form_examination_mob_apl
       {
           $_SESSION['token'] = $this->token;
       }
+      if (isset($this->org) && isset($this->NM_contr_var_session) && $this->NM_contr_var_session == "Yes") 
+      {
+          $_SESSION['org'] = $this->org;
+      }
       if (isset($_POST["token"]) && isset($this->token)) 
       {
           $_SESSION['token'] = $this->token;
       }
+      if (isset($_POST["org"]) && isset($this->org)) 
+      {
+          $_SESSION['org'] = $this->org;
+      }
       if (isset($_GET["token"]) && isset($this->token)) 
       {
           $_SESSION['token'] = $this->token;
+      }
+      if (isset($_GET["org"]) && isset($this->org)) 
+      {
+          $_SESSION['org'] = $this->org;
       }
       if (isset($this->nmgp_opcao) && $this->nmgp_opcao == "reload_novo") {
           $_POST['nmgp_opcao'] = "novo";
@@ -354,6 +366,10 @@ class form_examination_mob_apl
           {
               $_SESSION['token'] = $this->token;
           }
+          if (isset($this->org)) 
+          {
+              $_SESSION['org'] = $this->org;
+          }
           if (isset($this->NM_where_filter_form))
           {
               $_SESSION['sc_session'][$script_case_init]['form_examination_mob']['where_filter_form'] = $this->NM_where_filter_form;
@@ -370,6 +386,10 @@ class form_examination_mob_apl
           if (isset($this->token)) 
           {
               $_SESSION['token'] = $this->token;
+          }
+          if (isset($this->org)) 
+          {
+              $_SESSION['org'] = $this->org;
           }
       } 
       elseif (isset($script_case_init) && !empty($script_case_init) && isset($_SESSION['sc_session'][$script_case_init]['form_examination_mob']['parms']))
@@ -1273,7 +1293,7 @@ class form_examination_mob_apl
               }
               $campos_erro = $this->Formata_Erros($Campos_Crit, $Campos_Falta, $Campos_Erros, 4);
               $this->Campos_Mens_erro = ""; 
-              $this->Erro->mensagem(__FILE__, __LINE__, "critica", $campos_erro); 
+              $this->Erro->mensagem(__FILE__, __LINE__, "critica", $campos_erro, '', true, true); 
               $this->nmgp_opc_ant = $this->nmgp_opcao ; 
               if ($this->nmgp_opcao == "incluir" && $nm_apl_dependente == 1) 
               { 
@@ -1568,7 +1588,7 @@ if (isset($_SESSION['scriptcase']['device_mobile']) && $_SESSION['scriptcase']['
       var sc_tbLangEsc = "<?php echo html_entity_decode($this->Ini->Nm_lang["lang_tb_esc"], ENT_COMPAT, $_SESSION["scriptcase"]["charset"]) ?>";
       var sc_userSweetAlertDisplayed = false;
     </SCRIPT>
-    <SCRIPT type="text/javascript" src="../_lib/lib/js/jquery-3.6.0.min.js"></SCRIPT>
+    <SCRIPT type="text/javascript" src="<?php echo $this->Ini->url_third; ?>jquery/js/jquery.js"></SCRIPT>
     <SCRIPT type="text/javascript" src="<?php echo $this->Ini->path_prod; ?>/third/jquery_plugin/malsup-blockui/jquery.blockUI.js"></SCRIPT>
     <SCRIPT type="text/javascript" src="<?php echo $this->Ini->path_prod; ?>/third/jquery_plugin/thickbox/thickbox-compressed.js"></SCRIPT>
 <?php
@@ -1633,8 +1653,10 @@ include_once("form_examination_mob_sajax_js.php");
           $this->$cmp = $val_cmp;
       }
       $_SESSION['scriptcase']['form_examination_mob']['contr_erro'] = 'on';
+if (!isset($this->sc_temp_org)) {$this->sc_temp_org = (isset($_SESSION['org'])) ? $_SESSION['org'] : "";}
 if (!isset($this->sc_temp_token)) {$this->sc_temp_token = (isset($_SESSION['token'])) ? $_SESSION['token'] : "";}
  $token = $this->sc_temp_token;
+$org_id = $this->sc_temp_org;
 
 $check_sql = "SELECT no_ihs, name, patient_rm, birthDate, gender"
    . " FROM patient"
@@ -1825,7 +1847,7 @@ curl_setopt_array($curl, array(
     "resourceType": "ServiceRequest",
     "identifier": [
         {
-            "system": "http://sys-ids.kemkes.go.id/servicerequest/'.$orgnya.'",
+            "system": "http://sys-ids.kemkes.go.id/servicerequest/'.$org_id.'",
             "value": "'.$this->identifiersr .'"
         },
         {
@@ -1838,7 +1860,7 @@ curl_setopt_array($curl, array(
                     }
                 ]
             },
-            "system": "http://sys-ids.kemkes.go.id/acsn/'.$orgnya.'",
+            "system": "http://sys-ids.kemkes.go.id/acsn/'.$org_id.'",
             "value": "'.$this->accno .'"
         }
     ],
@@ -1848,7 +1870,7 @@ curl_setopt_array($curl, array(
             "id": "'.$ihs_patient.'",
             "identifier": [
                 {
-                    "system": "http://sys-ids.kemkes.go.id/mrn/'.$orgnya.'",
+                    "system": "http://sys-ids.kemkes.go.id/mrn/'.$org_id.'",
                     "value": "'.$ihs_rm.'"
                 }
             ],
@@ -1899,7 +1921,7 @@ curl_setopt_array($curl, array(
         "reference": "Patient/'.$ihs_patient.'"
     },
     "encounter": {
-        "reference": "Encounter/2823ed1d-3e3e-434e-9a5b-9c579d192787",
+        "reference": "Encounter/de9f4b43-ac76-4c8c-b218-ea1558477f29",
         "display": "Permintaan pemeriksaan USG untuk kehamilan"
     },
     "occurrenceDateTime": "'.$this->tgl_pemeriksaan .'T09:30:27+07:00",
@@ -1945,6 +1967,7 @@ $params = array(
 
 $this->nm_mens_alert[] = $response; $this->nm_params_alert[] = $params; if ($this->NM_ajax_flag) { $this->sc_ajax_alert($response, $params); }
 if (isset($this->sc_temp_token)) { $_SESSION['token'] = $this->sc_temp_token;}
+if (isset($this->sc_temp_org)) { $_SESSION['org'] = $this->sc_temp_org;}
 $_SESSION['scriptcase']['form_examination_mob']['contr_erro'] = 'off'; 
     echo ob_get_clean();
 ?>
@@ -1999,7 +2022,7 @@ $_SESSION['scriptcase']['form_examination_mob']['contr_erro'] = 'off';
       var sc_tbLangEsc = "<?php echo html_entity_decode($this->Ini->Nm_lang["lang_tb_esc"], ENT_COMPAT, $_SESSION["scriptcase"]["charset"]) ?>";
       var sc_userSweetAlertDisplayed = false;
     </SCRIPT>
-    <SCRIPT type="text/javascript" src="../_lib/lib/js/jquery-3.6.0.min.js"></SCRIPT>
+    <SCRIPT type="text/javascript" src="<?php echo $this->Ini->url_third; ?>jquery/js/jquery.js"></SCRIPT>
     <SCRIPT type="text/javascript" src="<?php echo $this->Ini->path_prod; ?>/third/jquery_plugin/malsup-blockui/jquery.blockUI.js"></SCRIPT>
     <SCRIPT type="text/javascript" src="<?php echo $this->Ini->path_prod; ?>/third/jquery_plugin/thickbox/thickbox-compressed.js"></SCRIPT>
 <?php
@@ -2068,8 +2091,10 @@ include_once("form_examination_mob_sajax_js.php");
           $this->$cmp = $val_cmp;
       }
       $_SESSION['scriptcase']['form_examination_mob']['contr_erro'] = 'on';
+if (!isset($this->sc_temp_org)) {$this->sc_temp_org = (isset($_SESSION['org'])) ? $_SESSION['org'] : "";}
 if (!isset($this->sc_temp_token)) {$this->sc_temp_token = (isset($_SESSION['token'])) ? $_SESSION['token'] : "";}
  $token = $this->sc_temp_token;
+$org_id = $this->sc_temp_org;
 
 $check_sql = "SELECT no_ihs"
    . " FROM patient"
@@ -2152,7 +2177,7 @@ if (isset($this->rs[0][0]))
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://api-satusehat-dev.dto.kemkes.go.id/fhir-r4/v1/ServiceRequest',
+  CURLOPT_URL => 'https://api-satusehat.kemkes.go.id/fhir-r4/v1/ServiceRequest',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -2164,7 +2189,7 @@ curl_setopt_array($curl, array(
     "resourceType": "ServiceRequest",
     "identifier": [
         {
-            "system": "http://sys-ids.kemkes.go.id/servicerequest/10000004",
+            "system": "http://sys-ids.kemkes.go.id/servicerequest/'.$org_id.'",
             "value": "'.$this->identifiersr .'"
         },
         {
@@ -2177,7 +2202,7 @@ curl_setopt_array($curl, array(
                     }
                 ]
             },
-            "system": "http://sys-ids.kemkes.go.id/acsn/10000004",
+            "system": "http://sys-ids.kemkes.go.id/acsn/'.$org_id.'",
             "value": "'.$this->accno .'"
         }
     ],
@@ -2209,7 +2234,7 @@ curl_setopt_array($curl, array(
         "reference": "Patient/'.$ihs_patient.'"
     },
     "encounter": {
-        "reference": "Encounter/2823ed1d-3e3e-434e-9a5b-9c579d192787"
+        "reference": "Encounter/de9f4b43-ac76-4c8c-b218-ea1558477f29"
     },
     "occurrenceDateTime": "'.$this->tgl_pemeriksaan .'T00:00:00+07:00",
     "authoredOn": "'.$this->tgl_pemeriksaan .'T00:00:00+07:00",
@@ -2265,6 +2290,7 @@ $params = array(
 
 $this->nm_mens_alert[] = $response; $this->nm_params_alert[] = $params; if ($this->NM_ajax_flag) { $this->sc_ajax_alert($response, $params); }
 if (isset($this->sc_temp_token)) { $_SESSION['token'] = $this->sc_temp_token;}
+if (isset($this->sc_temp_org)) { $_SESSION['org'] = $this->sc_temp_org;}
 $_SESSION['scriptcase']['form_examination_mob']['contr_erro'] = 'off'; 
     echo ob_get_clean();
 ?>
@@ -2587,212 +2613,8 @@ $_SESSION['scriptcase']['form_examination_mob']['contr_erro'] = 'off';
           if (!isset($this->NM_ajax_flag) || 'validate_' != substr($this->NM_ajax_opcao, 0, 9))
           {
               $_SESSION['scriptcase']['form_examination_mob']['contr_erro'] = 'on';
-if (isset($this->NM_ajax_flag) && $this->NM_ajax_flag)
-{
-    $original_dpjp = $this->dpjp;
-    $original_patient_rm = $this->patient_rm;
-    $original_tgl_pemeriksaan = $this->tgl_pemeriksaan;
-}
-if (!isset($this->sc_temp_token)) {$this->sc_temp_token = (isset($_SESSION['token'])) ? $_SESSION['token'] : "";}
- $token = $this->sc_temp_token;
-
-$check_sql = "SELECT no_ihs"
-   . " FROM patient"
-   . " WHERE patient_rm = '" . $this->patient_rm  . "'";
  
-      $nm_select = $check_sql; 
-      $_SESSION['scriptcase']['sc_sql_ult_comando'] = $nm_select; 
-      $_SESSION['scriptcase']['sc_sql_ult_conexao'] = ''; 
-      $this->rs = array();
-      if ($SCrx = $this->Db->Execute($nm_select)) 
-      { 
-          $SCy = 0; 
-          $nm_count = $SCrx->FieldCount();
-          while (!$SCrx->EOF)
-          { 
-                 for ($SCx = 0; $SCx < $nm_count; $SCx++)
-                 { 
-                      $this->rs[$SCy] [$SCx] = $SCrx->fields[$SCx];
-                 }
-                 $SCy++; 
-                 $SCrx->MoveNext();
-          } 
-          $SCrx->Close();
-      } 
-      elseif (isset($GLOBALS["NM_ERRO_IBASE"]) && $GLOBALS["NM_ERRO_IBASE"] != 1)  
-      { 
-          $this->rs = false;
-          $this->rs_erro = $this->Db->ErrorMsg();
-      } 
 
-
-if (isset($this->rs[0][0]))     
-{
-    $ihs_patient = $this->rs[0][0];
-}
-		else     
-{
-	$ihs_patient = '';
-}
-
-$check_sql = "SELECT ihs_no"
-   . " FROM practitioner"
-   . " WHERE id = '" . $this->dpjp  . "'";
- 
-      $nm_select = $check_sql; 
-      $_SESSION['scriptcase']['sc_sql_ult_comando'] = $nm_select; 
-      $_SESSION['scriptcase']['sc_sql_ult_conexao'] = ''; 
-      $this->rs = array();
-      if ($SCrx = $this->Db->Execute($nm_select)) 
-      { 
-          $SCy = 0; 
-          $nm_count = $SCrx->FieldCount();
-          while (!$SCrx->EOF)
-          { 
-                 for ($SCx = 0; $SCx < $nm_count; $SCx++)
-                 { 
-                      $this->rs[$SCy] [$SCx] = $SCrx->fields[$SCx];
-                 }
-                 $SCy++; 
-                 $SCrx->MoveNext();
-          } 
-          $SCrx->Close();
-      } 
-      elseif (isset($GLOBALS["NM_ERRO_IBASE"]) && $GLOBALS["NM_ERRO_IBASE"] != 1)  
-      { 
-          $this->rs = false;
-          $this->rs_erro = $this->Db->ErrorMsg();
-      } 
-
-
-if (isset($this->rs[0][0]))     
-{
-    $dpjpnya = $this->rs[0][0];
-}
-		else     
-{
-	$dpjpnya = '';
-}
-
-$curl = curl_init();
-
-curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://api-satusehat-dev.dto.kemkes.go.id/fhir-r4/v1/ServiceRequest',
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => '',
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 0,
-  CURLOPT_FOLLOWLOCATION => true,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => 'POST',
-  CURLOPT_POSTFIELDS =>'{
-    "resourceType": "ServiceRequest",
-    "identifier": [
-        {
-            "system": "http://sys-ids.kemkes.go.id/servicerequest/10000004",
-            "value": "'.$this->identifiersr .'"
-        },
-        {
-            "use": "usual",
-            "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                        "code": "ACSN"
-                    }
-                ]
-            },
-            "system": "http://sys-ids.kemkes.go.id/acsn/10000004",
-            "value": "'.$this->accno .'"
-        }
-    ],
-    "status": "active",
-    "intent": "original-order",
-    "priority": "routine",
-    "category": [
-        {
-            "coding": [
-                {
-                    "system": "http://snomed.info/sct",
-                    "code": "363679005",
-                    "display": "Imaging"
-                }
-            ]
-        }
-    ],
-    "code": {
-        "coding": [
-            {
-                "system": "http://loinc.org",
-                "code": "79103-8",
-                "display": "CT Abdomen W contrast IV"
-            }
-        ],
-        "text": "Pemeriksaan CT Scan Abdomen Atas"
-    },
-    "subject": {
-        "reference": "Patient/'.$ihs_patient.'"
-    },
-    "encounter": {
-        "reference": "Encounter/2823ed1d-3e3e-434e-9a5b-9c579d192787"
-    },
-    "occurrenceDateTime": "'.$this->tgl_pemeriksaan .'T09:30:27+07:00",
-    "authoredOn": "'.$this->tgl_pemeriksaan .'T12:30:27+07:00",
-    "requester": {
-        "reference": "Practitioner/'.$dpjpnya.'",
-        "display": "Dokter Bronsig"
-    },
-    "performer": [
-        {
-            "reference": "Practitioner/'.$dpjpnya.'",
-            "display": "Dokter Bronsig"
-        }
-    ],
-    "bodySite": [
-        {
-            "coding": [
-                {
-                    "system": "http://snomed.info/sct",
-                    "code": "80581009",
-                    "display": "Upper abdomen structure"
-                }
-            ]
-        }
-    ],
-    "reasonCode": [
-        {
-            "text": "Periksa risiko adanya sumbatan batu empedu"
-        }
-    ]
-}',
-  CURLOPT_HTTPHEADER => array(
-    'Content-Type: application/json',
-    'Authorization: Bearer '.$token
-  ),
-));
-
-$response = curl_exec($curl);
-
-curl_close($curl);
-
-$this->sc_ajax_message($response, "Response API");
-echo $response;
-if (isset($this->sc_temp_token)) { $_SESSION['token'] = $this->sc_temp_token;}
-if (isset($this->NM_ajax_flag) && $this->NM_ajax_flag)
-{
-    if (($original_dpjp != $this->dpjp || (isset($bFlagRead_dpjp) && $bFlagRead_dpjp)))
-    {
-        $this->ajax_return_values_dpjp(true);
-    }
-    if (($original_patient_rm != $this->patient_rm || (isset($bFlagRead_patient_rm) && $bFlagRead_patient_rm)))
-    {
-        $this->ajax_return_values_patient_rm(true);
-    }
-    if (($original_tgl_pemeriksaan != $this->tgl_pemeriksaan || (isset($bFlagRead_tgl_pemeriksaan) && $bFlagRead_tgl_pemeriksaan)))
-    {
-        $this->ajax_return_values_tgl_pemeriksaan(true);
-    }
-}
 $_SESSION['scriptcase']['form_examination_mob']['contr_erro'] = 'off'; 
           }
       }
@@ -3623,7 +3445,9 @@ else
    $old_value_id = $this->id;
    $old_value_tgl_pemeriksaan = $this->tgl_pemeriksaan;
    $this->nm_tira_formatacao();
-   $this->nm_converte_datas(false);
+   if ($this->nmgp_opcao != "nada") {
+       $this->nm_converte_datas(false);
+   }
 
 
    $unformatted_value_id = $this->id;
@@ -3811,7 +3635,9 @@ else
    $old_value_id = $this->id;
    $old_value_tgl_pemeriksaan = $this->tgl_pemeriksaan;
    $this->nm_tira_formatacao();
-   $this->nm_converte_datas(false);
+   if ($this->nmgp_opcao != "nada") {
+       $this->nm_converte_datas(false);
+   }
 
 
    $unformatted_value_id = $this->id;
@@ -4103,8 +3929,16 @@ $_SESSION['scriptcase']['form_examination_mob']['contr_erro'] = 'off';
       {
           $this->patient_rm_before_qstr = $this->patient_rm;
           $this->patient_rm = substr($this->Db->qstr($this->patient_rm), 1, -1); 
+          if (in_array(strtolower($this->Ini->nm_tpbanco), $this->Ini->nm_bases_mysql))
+          {
+              $this->patient_rm = str_replace(array("\\r\\n", "\\n", "\r\n"), array("\r\n", "\n", "\n"), $this->patient_rm);
+          }
           $this->jenis_pemeriksaan_before_qstr = $this->jenis_pemeriksaan;
           $this->jenis_pemeriksaan = substr($this->Db->qstr($this->jenis_pemeriksaan), 1, -1); 
+          if (in_array(strtolower($this->Ini->nm_tpbanco), $this->Ini->nm_bases_mysql))
+          {
+              $this->jenis_pemeriksaan = str_replace(array("\\r\\n", "\\n", "\r\n"), array("\r\n", "\n", "\n"), $this->jenis_pemeriksaan);
+          }
           if ($this->tgl_pemeriksaan == "")  
           { 
               $this->tgl_pemeriksaan = "null"; 
@@ -4112,8 +3946,16 @@ $_SESSION['scriptcase']['form_examination_mob']['contr_erro'] = 'off';
           } 
           $this->identifiersr_before_qstr = $this->identifiersr;
           $this->identifiersr = substr($this->Db->qstr($this->identifiersr), 1, -1); 
+          if (in_array(strtolower($this->Ini->nm_tpbanco), $this->Ini->nm_bases_mysql))
+          {
+              $this->identifiersr = str_replace(array("\\r\\n", "\\n", "\r\n"), array("\r\n", "\n", "\n"), $this->identifiersr);
+          }
           $this->accno_before_qstr = $this->accno;
           $this->accno = substr($this->Db->qstr($this->accno), 1, -1); 
+          if (in_array(strtolower($this->Ini->nm_tpbanco), $this->Ini->nm_bases_mysql))
+          {
+              $this->accno = str_replace(array("\\r\\n", "\\n", "\r\n"), array("\r\n", "\n", "\n"), $this->accno);
+          }
       }
       if ($this->nmgp_opcao == "alterar") 
       {
@@ -5622,7 +5464,9 @@ else
    $old_value_id = $this->id;
    $old_value_tgl_pemeriksaan = $this->tgl_pemeriksaan;
    $this->nm_tira_formatacao();
-   $this->nm_converte_datas(false);
+   if ($this->nmgp_opcao != "nada") {
+       $this->nm_converte_datas(false);
+   }
 
 
    $unformatted_value_id = $this->id;
@@ -5690,7 +5534,9 @@ else
    $old_value_id = $this->id;
    $old_value_tgl_pemeriksaan = $this->tgl_pemeriksaan;
    $this->nm_tira_formatacao();
-   $this->nm_converte_datas(false);
+   if ($this->nmgp_opcao != "nada") {
+       $this->nm_converte_datas(false);
+   }
 
 
    $unformatted_value_id = $this->id;

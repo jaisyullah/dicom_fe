@@ -3,7 +3,7 @@
 error_reporting(E_ALL);
 $old_error_handler = set_error_handler("form_credential_mob_scriptcase_error_handler");
 
-function form_credential_mob_scriptcase_error_handler($err_no, $err_msg, $err_file, $err_line, $exibe="")
+function form_credential_mob_scriptcase_error_handler($err_no, $err_msg, $err_file, $err_line, $exibe="", $err_usr=false)
 {
     $errors_handled = array(
                             E_ERROR,
