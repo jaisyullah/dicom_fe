@@ -61,46 +61,46 @@ function scEventControl_init(iSeqRow) {
 }
 
 function scEventControl_active(iSeqRow) {
-  if (scEventControl_data["id" + iSeqRow] && scEventControl_data["id" + iSeqRow]["blur"]) {
+  if (scEventControl_data["id" + iSeqRow]["blur"]) {
     return true;
   }
-  if (scEventControl_data["id" + iSeqRow] && scEventControl_data["id" + iSeqRow]["change"]) {
+  if (scEventControl_data["id" + iSeqRow]["change"]) {
     return true;
   }
-  if (scEventControl_data["patient_rm" + iSeqRow] && scEventControl_data["patient_rm" + iSeqRow]["blur"]) {
+  if (scEventControl_data["patient_rm" + iSeqRow]["blur"]) {
     return true;
   }
-  if (scEventControl_data["patient_rm" + iSeqRow] && scEventControl_data["patient_rm" + iSeqRow]["change"]) {
+  if (scEventControl_data["patient_rm" + iSeqRow]["change"]) {
     return true;
   }
-  if (scEventControl_data["jenis_pemeriksaan" + iSeqRow] && scEventControl_data["jenis_pemeriksaan" + iSeqRow]["blur"]) {
+  if (scEventControl_data["jenis_pemeriksaan" + iSeqRow]["blur"]) {
     return true;
   }
-  if (scEventControl_data["jenis_pemeriksaan" + iSeqRow] && scEventControl_data["jenis_pemeriksaan" + iSeqRow]["change"]) {
+  if (scEventControl_data["jenis_pemeriksaan" + iSeqRow]["change"]) {
     return true;
   }
-  if (scEventControl_data["tgl_pemeriksaan" + iSeqRow] && scEventControl_data["tgl_pemeriksaan" + iSeqRow]["blur"]) {
+  if (scEventControl_data["tgl_pemeriksaan" + iSeqRow]["blur"]) {
     return true;
   }
-  if (scEventControl_data["tgl_pemeriksaan" + iSeqRow] && scEventControl_data["tgl_pemeriksaan" + iSeqRow]["change"]) {
+  if (scEventControl_data["tgl_pemeriksaan" + iSeqRow]["change"]) {
     return true;
   }
-  if (scEventControl_data["dpjp" + iSeqRow] && scEventControl_data["dpjp" + iSeqRow]["blur"]) {
+  if (scEventControl_data["dpjp" + iSeqRow]["blur"]) {
     return true;
   }
-  if (scEventControl_data["dpjp" + iSeqRow] && scEventControl_data["dpjp" + iSeqRow]["change"]) {
+  if (scEventControl_data["dpjp" + iSeqRow]["change"]) {
     return true;
   }
-  if (scEventControl_data["accno" + iSeqRow] && scEventControl_data["accno" + iSeqRow]["blur"]) {
+  if (scEventControl_data["accno" + iSeqRow]["blur"]) {
     return true;
   }
-  if (scEventControl_data["accno" + iSeqRow] && scEventControl_data["accno" + iSeqRow]["change"]) {
+  if (scEventControl_data["accno" + iSeqRow]["change"]) {
     return true;
   }
-  if (scEventControl_data["identifiersr" + iSeqRow] && scEventControl_data["identifiersr" + iSeqRow]["blur"]) {
+  if (scEventControl_data["identifiersr" + iSeqRow]["blur"]) {
     return true;
   }
-  if (scEventControl_data["identifiersr" + iSeqRow] && scEventControl_data["identifiersr" + iSeqRow]["change"]) {
+  if (scEventControl_data["identifiersr" + iSeqRow]["change"]) {
     return true;
   }
   return false;
@@ -403,30 +403,18 @@ if ('' != $miniCalendarIcon) {
 }
 elseif ('' != $miniCalendarFA) {
 ?>
-    buttonText: "",
+    buttonText: "<?php echo $miniCalendarFA; ?>",
 <?php
 }
 elseif ('' != $miniCalendarButton[0]) {
 ?>
-    buttonText: "",
+    buttonText: "<?php echo $miniCalendarButton[0]; ?>",
 <?php
 }
 ?>
     currentText: "<?php  echo html_entity_decode($this->Ini->Nm_lang["lang_per_today"], ENT_COMPAT, $_SESSION["scriptcase"]["charset"]);       ?>",
     closeText: "<?php  echo html_entity_decode($this->Ini->Nm_lang["lang_btns_mess_clse"], ENT_COMPAT, $_SESSION["scriptcase"]["charset"]);       ?>",
-  })
-<?php
-if ('' != $miniCalendarFA) {
-?>
-    .next('button').append("<?php echo $miniCalendarFA; ?>")
-<?php
-}
-elseif ('' != $miniCalendarButton[0]) {
-?>
-    .next('button').append("<?php echo $miniCalendarButton[0]; ?>")
-<?php
-}
-?>
+  });
 } // scJQCalendarAdd
 
 function scJQUploadAdd(iSeqRow) {

@@ -75,7 +75,7 @@ if (isset($_SESSION['scriptcase']['device_mobile']) && $_SESSION['scriptcase']['
   var sc_css_status_pwd_box = '<?php echo $this->Ini->Css_status_pwd_box; ?>';
   var sc_css_status_pwd_text = '<?php echo $this->Ini->Css_status_pwd_text; ?>';
  </SCRIPT>
-        <SCRIPT type="text/javascript" src="<?php echo $this->Ini->url_third; ?>jquery/js/jquery.js"></SCRIPT>
+        <SCRIPT type="text/javascript" src="../_lib/lib/js/jquery-3.6.0.min.js"></SCRIPT>
             <?php
                if ($_SESSION['scriptcase']['display_mobile'] && $_SESSION['scriptcase']['device_mobile']) {
                    $forced_mobile = (isset($_SESSION['scriptcase']['force_mobile']) && $_SESSION['scriptcase']['force_mobile']) ? 'true' : 'false';
@@ -183,8 +183,8 @@ if ('' != $miniCalendarFA) {
 <?php
 }
 ?>
-<link rel="stylesheet" href="<?php echo $this->Ini->path_prod ?>/third/jquery_plugin/select2/css/select2.min.css" type="text/css" />
-<script type="text/javascript" src="<?php echo $this->Ini->path_prod ?>/third/jquery_plugin/select2/js/select2.full.min.js"></script>
+<link rel="stylesheet" href="<?php echo $this->Ini->path_prod ?>/third/jquery_plugin/select2-4.0.6/css/select2.min.css" type="text/css" />
+<script type="text/javascript" src="<?php echo $this->Ini->path_prod ?>/third/jquery_plugin/select2-4.0.6/js/select2.full.min.js"></script>
  <SCRIPT type="text/javascript" src="<?php echo $this->Ini->url_lib_js; ?>scInput.js"></SCRIPT>
  <SCRIPT type="text/javascript" src="<?php echo $this->Ini->url_lib_js; ?>jquery.scInput.js"></SCRIPT>
  <SCRIPT type="text/javascript" src="<?php echo $this->Ini->url_lib_js; ?>jquery.scInput2.js"></SCRIPT>
@@ -1461,9 +1461,7 @@ else
    $old_value_id = $this->id;
    $old_value_tgl_pemeriksaan = $this->tgl_pemeriksaan;
    $this->nm_tira_formatacao();
-   if ($this->nmgp_opcao != "nada") {
-       $this->nm_converte_datas(false);
-   }
+   $this->nm_converte_datas(false);
 
 
    $unformatted_value_id = $this->id;
@@ -1772,9 +1770,7 @@ else
    $old_value_id = $this->id;
    $old_value_tgl_pemeriksaan = $this->tgl_pemeriksaan;
    $this->nm_tira_formatacao();
-   if ($this->nmgp_opcao != "nada") {
-       $this->nm_converte_datas(false);
-   }
+   $this->nm_converte_datas(false);
 
 
    $unformatted_value_id = $this->id;
@@ -2472,7 +2468,7 @@ scAjax_displayEmptyForm();
 		    if ($("#brec_b").hasClass("disabled")) {
 		        return;
 		    }
-			if (document.F1['nmgp_rec_' + btnPos].value != '') {nm_navpage(document.F1['nmgp_rec_' + btnPos].value, 'P');} document.F1['nmgp_rec_' + btnPos].value = '';
+			nm_navpage(document.F1['nmgp_rec_' + btnPos].value, 'P'); document.F1['nmgp_rec_' + btnPos].value = '';
 			 return;
 		}
 	}

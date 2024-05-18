@@ -1293,7 +1293,7 @@ class form_examination_mob_apl
               }
               $campos_erro = $this->Formata_Erros($Campos_Crit, $Campos_Falta, $Campos_Erros, 4);
               $this->Campos_Mens_erro = ""; 
-              $this->Erro->mensagem(__FILE__, __LINE__, "critica", $campos_erro, '', true, true); 
+              $this->Erro->mensagem(__FILE__, __LINE__, "critica", $campos_erro); 
               $this->nmgp_opc_ant = $this->nmgp_opcao ; 
               if ($this->nmgp_opcao == "incluir" && $nm_apl_dependente == 1) 
               { 
@@ -1588,7 +1588,7 @@ if (isset($_SESSION['scriptcase']['device_mobile']) && $_SESSION['scriptcase']['
       var sc_tbLangEsc = "<?php echo html_entity_decode($this->Ini->Nm_lang["lang_tb_esc"], ENT_COMPAT, $_SESSION["scriptcase"]["charset"]) ?>";
       var sc_userSweetAlertDisplayed = false;
     </SCRIPT>
-    <SCRIPT type="text/javascript" src="<?php echo $this->Ini->url_third; ?>jquery/js/jquery.js"></SCRIPT>
+    <SCRIPT type="text/javascript" src="../_lib/lib/js/jquery-3.6.0.min.js"></SCRIPT>
     <SCRIPT type="text/javascript" src="<?php echo $this->Ini->path_prod; ?>/third/jquery_plugin/malsup-blockui/jquery.blockUI.js"></SCRIPT>
     <SCRIPT type="text/javascript" src="<?php echo $this->Ini->path_prod; ?>/third/jquery_plugin/thickbox/thickbox-compressed.js"></SCRIPT>
 <?php
@@ -1843,6 +1843,7 @@ curl_setopt_array($curl, array(
   CURLOPT_FOLLOWLOCATION => true,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'POST',
+
   CURLOPT_POSTFIELDS => '{
     "resourceType": "ServiceRequest",
     "identifier": [
@@ -1924,10 +1925,10 @@ curl_setopt_array($curl, array(
         "reference": "Encounter/de9f4b43-ac76-4c8c-b218-ea1558477f29",
         "display": "Permintaan pemeriksaan USG untuk kehamilan"
     },
-    "occurrenceDateTime": "'.$this->tgl_pemeriksaan .'T09:30:27+07:00",
+    "occurrenceDateTime": "'.$this->tgl_pemeriksaan .'T02:05:00+00:00",
     "requester": {
-        "reference": "Practitioner/'.$dpjpnya.'",
-        "display": "Dokter '.$dpjpnya_nama.'"
+        "reference": "Practitioner/10012572188",
+        "display": "Dokter Bambang Anta"
     },
     "performer": [
         {
@@ -2022,7 +2023,7 @@ $_SESSION['scriptcase']['form_examination_mob']['contr_erro'] = 'off';
       var sc_tbLangEsc = "<?php echo html_entity_decode($this->Ini->Nm_lang["lang_tb_esc"], ENT_COMPAT, $_SESSION["scriptcase"]["charset"]) ?>";
       var sc_userSweetAlertDisplayed = false;
     </SCRIPT>
-    <SCRIPT type="text/javascript" src="<?php echo $this->Ini->url_third; ?>jquery/js/jquery.js"></SCRIPT>
+    <SCRIPT type="text/javascript" src="../_lib/lib/js/jquery-3.6.0.min.js"></SCRIPT>
     <SCRIPT type="text/javascript" src="<?php echo $this->Ini->path_prod; ?>/third/jquery_plugin/malsup-blockui/jquery.blockUI.js"></SCRIPT>
     <SCRIPT type="text/javascript" src="<?php echo $this->Ini->path_prod; ?>/third/jquery_plugin/thickbox/thickbox-compressed.js"></SCRIPT>
 <?php
@@ -3445,9 +3446,7 @@ else
    $old_value_id = $this->id;
    $old_value_tgl_pemeriksaan = $this->tgl_pemeriksaan;
    $this->nm_tira_formatacao();
-   if ($this->nmgp_opcao != "nada") {
-       $this->nm_converte_datas(false);
-   }
+   $this->nm_converte_datas(false);
 
 
    $unformatted_value_id = $this->id;
@@ -3635,9 +3634,7 @@ else
    $old_value_id = $this->id;
    $old_value_tgl_pemeriksaan = $this->tgl_pemeriksaan;
    $this->nm_tira_formatacao();
-   if ($this->nmgp_opcao != "nada") {
-       $this->nm_converte_datas(false);
-   }
+   $this->nm_converte_datas(false);
 
 
    $unformatted_value_id = $this->id;
@@ -3929,16 +3926,8 @@ $_SESSION['scriptcase']['form_examination_mob']['contr_erro'] = 'off';
       {
           $this->patient_rm_before_qstr = $this->patient_rm;
           $this->patient_rm = substr($this->Db->qstr($this->patient_rm), 1, -1); 
-          if (in_array(strtolower($this->Ini->nm_tpbanco), $this->Ini->nm_bases_mysql))
-          {
-              $this->patient_rm = str_replace(array("\\r\\n", "\\n", "\r\n"), array("\r\n", "\n", "\n"), $this->patient_rm);
-          }
           $this->jenis_pemeriksaan_before_qstr = $this->jenis_pemeriksaan;
           $this->jenis_pemeriksaan = substr($this->Db->qstr($this->jenis_pemeriksaan), 1, -1); 
-          if (in_array(strtolower($this->Ini->nm_tpbanco), $this->Ini->nm_bases_mysql))
-          {
-              $this->jenis_pemeriksaan = str_replace(array("\\r\\n", "\\n", "\r\n"), array("\r\n", "\n", "\n"), $this->jenis_pemeriksaan);
-          }
           if ($this->tgl_pemeriksaan == "")  
           { 
               $this->tgl_pemeriksaan = "null"; 
@@ -3946,16 +3935,8 @@ $_SESSION['scriptcase']['form_examination_mob']['contr_erro'] = 'off';
           } 
           $this->identifiersr_before_qstr = $this->identifiersr;
           $this->identifiersr = substr($this->Db->qstr($this->identifiersr), 1, -1); 
-          if (in_array(strtolower($this->Ini->nm_tpbanco), $this->Ini->nm_bases_mysql))
-          {
-              $this->identifiersr = str_replace(array("\\r\\n", "\\n", "\r\n"), array("\r\n", "\n", "\n"), $this->identifiersr);
-          }
           $this->accno_before_qstr = $this->accno;
           $this->accno = substr($this->Db->qstr($this->accno), 1, -1); 
-          if (in_array(strtolower($this->Ini->nm_tpbanco), $this->Ini->nm_bases_mysql))
-          {
-              $this->accno = str_replace(array("\\r\\n", "\\n", "\r\n"), array("\r\n", "\n", "\n"), $this->accno);
-          }
       }
       if ($this->nmgp_opcao == "alterar") 
       {
@@ -5464,9 +5445,7 @@ else
    $old_value_id = $this->id;
    $old_value_tgl_pemeriksaan = $this->tgl_pemeriksaan;
    $this->nm_tira_formatacao();
-   if ($this->nmgp_opcao != "nada") {
-       $this->nm_converte_datas(false);
-   }
+   $this->nm_converte_datas(false);
 
 
    $unformatted_value_id = $this->id;
@@ -5534,9 +5513,7 @@ else
    $old_value_id = $this->id;
    $old_value_tgl_pemeriksaan = $this->tgl_pemeriksaan;
    $this->nm_tira_formatacao();
-   if ($this->nmgp_opcao != "nada") {
-       $this->nm_converte_datas(false);
-   }
+   $this->nm_converte_datas(false);
 
 
    $unformatted_value_id = $this->id;

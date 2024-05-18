@@ -1,9 +1,8 @@
 <?php
 	$str_apl = 'index';
-	if(is_file("_lib/_app_data/" . $str_apl . '_ini.php'))
+	if(is_file("_lib/friendly_url/" . $str_apl . '_ini.txt'))
 	{
-		require("_lib/_app_data/" . $str_apl . '_ini.php');
-		$str_apl = $arr_data['friendly_url'];
+		$str_apl = file_get_contents("_lib/friendly_url/" . $str_apl . '_ini.txt');
 	}
 	else
 	{

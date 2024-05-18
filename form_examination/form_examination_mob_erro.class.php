@@ -23,7 +23,7 @@ class form_examination_mob_erro
    }
 
    //----- 
-   function mensagem($script, $linha, $tipo, $mensagem, $complemento = "", $exibe=true, $err_usr=false)
+   function mensagem($script, $linha, $tipo, $mensagem, $complemento = "", $exibe = true)
    {
       $this->script      = $script;
       $this->linha       = $linha;
@@ -35,7 +35,7 @@ class form_examination_mob_erro
           return false;
       }
       $this->monta_mensagem();
-      return form_examination_mob_scriptcase_error_handler(E_USER_ERROR, $this->msg_final, $script, $linha, $exibe, $err_usr);
+      return form_examination_mob_scriptcase_error_handler(E_USER_ERROR, $this->msg_final, $script, $linha, $exibe);
    }
 
    //----- 

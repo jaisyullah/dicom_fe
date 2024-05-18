@@ -1372,25 +1372,3 @@ div#ui-datepicker-div > * {
     float: none !important;
     width: auto !important;
 }
-
-.calculator-popup {
-    width: 200px !important;
-    height: 154px !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%);
-    margin-top: 0 !important;
-    position: fixed !important;
-    z-index: 15;
-}
-
-.calculator-popup::before {
-    display: block;
-    content: " ";
-    position: fixed;
-    height: 200vh;
-    width: 200vw;
-    background: rgba(0,0,0,.2);
-    top: -100vh;
-    left: -100vw;
-}
